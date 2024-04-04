@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos - Custom LightSabers</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .card {
+        height: 100%;
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body class="sidebar-mini layout-fixed">
+    <div id="sidebarContainer" class="wrapper"></div>
+
+    <!-- Conteúdo da página -->
+    <div class="content-wrapper">
+      <div class="content p-4">
+        <h1 class="text-center mb-4">Produtos</h1>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <img
+                src="imgs/sabre1.jpg"
+                class="card-img-top"
+                alt="Sabre de luz"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5>Graflex</h5>
+                <p class="card-text">
+                  O sabre graflex é o clássico sabre de luz do Anakin Skywalker
+                  que foi passado de geração em geração para os jedi ao longo
+                  dos anos. O modelo tem acabamento todo em cromo em todo o hilt
+                  com belt ring no pomel. Seu design é um dos mais conhecidos e
+                  icônicos de toda a saga, uma verdadeira peça de colecionador
+                  com o toque custom que você procura.
+                </p>
+                <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <img
+                src="imgs/sabre2.jpg"
+                class="card-img-top"
+                alt="Sabre de luz"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5>Scarlet</h5>
+                <p class="card-text">
+                  O Scarlet é um dos nossos modelos de entrada mais cobiçados.
+                  Com um design pensado para spins e treinos, tem um grip firme
+                  com cortes horizontais que auxiliam na pegada. Acabamento em
+                  vermelho, azul, preto, cinza ou gold.
+                </p>
+                <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <img
+                src="imgs/sabre3.jpg"
+                class="card-img-top"
+                alt="Sabre de luz"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5>Oblivion Neopixel</h5>
+                <p class="card-text">
+                  O Oblivion traz um design mais atual com curvas e formas mais
+                  arredondadas. Com grip espaçado e emissor janelado, o design
+                  desse sabre é único. Com a lâmina flat igual ao Dark Saber de
+                  Mandalore, e acabamento em preto brilhante e cromo. Com essa
+                  peça você poderá reivindicar o trono que é seu por direito.
+                </p>
+                <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div id="footerContainer" class="wrapper"></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Carregar a barra lateral usando JavaScript
+        $("#sidebarContainer").load("sidebar.html", function () {
+          // Depois de carregar a barra lateral, carregar o footer
+          $("#footerContainer").load("footer.html", function () {
+            // Mostrar o footer quando todo o conteúdo estiver carregado
+            $(".footer").css("display", "block");
+
+            // Verificar se o conteúdo da página é maior que a janela do navegador
+            var windowHeight = $(window).height();
+            var documentHeight = $(document).height();
+            if (documentHeight > windowHeight) {
+              // Se o conteúdo for maior que a janela, ajustar o footer para que ele fique abaixo do conteúdo
+              $(".footer").css({
+                position: "relative",
+                bottom: "auto",
+                left: "auto",
+              });
+            } else {
+              // Se o conteúdo não for maior que a janela, ajustar o footer para que ele fique no final da página
+              $(".footer").css({
+                position: "fixed",
+                bottom: "0",
+                left: "0",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

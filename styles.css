@@ -1,0 +1,74 @@
+/* Estilo da barra lateral */
+.main-sidebar {
+    background-color: #343a40;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+}
+
+.sidebar-brand {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sidebar {
+    padding-bottom: 60px;
+    /* Para deixar espaço para o botão de alternância */
+}
+
+/* Estilo do conteúdo */
+.content-wrapper {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Estilo do botão de alternância */
+.nav-link.sidebar-toggle {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #ffffff;
+}
+
+/* Estilo dos ícones do menu */
+.nav-icon {
+    margin-right: 10px;
+}
+
+.brand-link {
+    text-align: center;
+}
+
+body {
+    background-color: #F4F6F9 !important;
+    flex-direction: column;
+    min-height: 100vh; /* Faz com que o corpo da página tenha pelo menos a altura total da janela do navegador */
+}
+
+.main-footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+.content-wrapper {
+    flex: 1;
+    /* Faz com que o conteúdo se expanda para preencher o espaço restante */
+}
+
+.footer {
+    width: 100%;
+  
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Início - Custom LightSabers</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="sidebar-mini layout-fixed">
+    <div id="sidebarContainer" class="wrapper"></div>
+
+    <!-- Conteúdo da página -->
+    <div class="content-wrapper">
+      <div class="content p-4">
+        <h1>Bem-vindo à Custom LightSabers</h1>
+        <p>
+          Somos especialistas em sabres de luz. Explore nossos produtos e
+          serviços e entre em contato conosco para qualquer dúvida.
+        </p>
+        <p><a href="products.html" class="btn btn-primary">Ver Produtos</a></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div id="footerContainer" class="wrapper"></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Carregar a barra lateral usando JavaScript
+        $("#sidebarContainer").load("sidebar.html", function () {
+          // Depois de carregar a barra lateral, carregar o footer
+          $("#footerContainer").load("footer.html", function () {
+            // Mostrar o footer quando todo o conteúdo estiver carregado
+            $(".footer").css("display", "block");
+
+            // Verificar se o conteúdo da página é maior que a janela do navegador
+            var windowHeight = $(window).height();
+            var documentHeight = $(document).height();
+            if (documentHeight > windowHeight) {
+              // Se o conteúdo for maior que a janela, ajustar o footer para que ele fique abaixo do conteúdo
+              $(".footer").css({
+                position: "relative",
+                bottom: "auto",
+                left: "auto",
+              });
+            } else {
+              // Se o conteúdo não for maior que a janela, ajustar o footer para que ele fique no final da página
+              $(".footer").css({
+                position: "fixed",
+                bottom: "0",
+                left: "0",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
