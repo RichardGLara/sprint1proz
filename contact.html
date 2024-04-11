@@ -24,6 +24,7 @@
               type="text"
               class="form-control"
               id="name"
+              name="name"
               placeholder="Digite seu nome"
             />
           </div>
@@ -33,6 +34,7 @@
               type="email"
               class="form-control"
               id="email"
+              name="email"
               placeholder="Digite seu e-mail"
             />
           </div>
@@ -41,22 +43,32 @@
             <textarea
               class="form-control"
               id="message"
+              name="message"
               rows="5"
               placeholder="Digite sua mensagem"
             ></textarea>
+          </div>          
+          <div class="form-group">
+            <label for="department">Departamento</label>
+            <select class="form-control" id="department" name="department">
+              <option value="products">Produtos</option>
+              <option value="services">Serviços</option>
+              <option value="others">Outros</option>
+            </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
-            Enviar Mensagem
-          </button>
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+            <button type="reset" class="btn btn-danger">Limpar</button>
+          </div>
         </form>
       </div>
     </div>
-
+   <br>
     <!-- Footer -->
     <footer class="footer">
       <div id="footerContainer" class="wrapper"></div>
     </footer>
-
+  </br>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
