@@ -72,3 +72,8 @@ body {
     bottom: 0;
     left: 0;
 }
+
+.space {
+    height: 10px;
+    width: 40px;
+}
