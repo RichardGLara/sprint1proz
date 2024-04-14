@@ -86,14 +86,15 @@ body {
 }
 
 .view_index {
-    max-width: 380px;
+    max-width: 100%;
     width: auto;
     margin-bottom: 40px;
     border-radius: 6px;
 }
 
 .index_logo {
-    width: 380px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .container_pics{
