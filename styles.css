@@ -81,9 +81,13 @@ body {
 
 .info_index {
     max-width: 400px;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
 .view_index {
     max-width: 400px;
     width: auto;
+    margin-top: 60px;
+    border-radius: 10px;
 }
