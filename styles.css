@@ -51,6 +51,7 @@ body {
     background-color: #F4F6F9 !important;
     flex-direction: column;
     min-height: 100vh; /* Faz com que o corpo da página tenha pelo menos a altura total da janela do navegador */
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .main-footer {
@@ -76,4 +77,13 @@ body {
 .space {
     height: 10px;
     width: 40px;
+}
+
+.info_index {
+    max-width: 400px;
+}
+
+.view_index {
+    max-width: 400px;
+    width: auto;
 }
