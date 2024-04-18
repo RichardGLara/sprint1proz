@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nós</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="sidebar-mini layout-fixed">
+    <div id="sidebarContainer" class="wrapper"></div>
+
+    <h1 class="text-center mb-4">Desnevolvedores do Projeto</h1>
+
+    <div class="content-wrapper">
+        <div class="content p-4">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="container_pics">
+                    <img class="pics" src="imgs/cust11.jpg" alt="Customization part 11">
+                  </div>
+                  <h5 class="card-title" style="font-weight: bold;">Artur GPJ</h5>
+                  <p class="card-text">
+                    Seu mini Resumo aqui...
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    
+    <div class="content-wrapper">
+        <div class="content p-4">
+          <!-- <div class="row"> -->
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="container_pics">
+                    <img class="pics" src="imgs/cust11.jpg" alt="Customization part 11">
+                  </div>
+                  <h5 class="card-title" style="font-weight: bold;">Artur GPJ</h5>
+                  <p class="card-text">
+                    Seu mini Resumo aqui...
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    
+    <div class="content-wrapper">
+        <div class="content p-4">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="container_pics">
+                    <img class="pics" src="imgs/cust11.jpg" alt="Customization part 11">
+                  </div>
+                  <h5 class="card-title" style="font-weight: bold;">Artur GPJ</h5>
+                  <p class="card-text">
+                    Seu mini Resumo aqui...
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    
+    <div class="content-wrapper">
+        <div class="content p-4">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="container_pics">
+                    <img class="pics" src="imgs/cust11.jpg" alt="Customization part 11">
+                  </div>
+                  <h5 class="card-title" style="font-weight: bold;">Artur GPJ</h5>
+                  <p class="card-text">
+                    Seu mini Resumo aqui...
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+
+    <div class="content-wrapper">
+        <div class="content p-4">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="container_pics">
+                    <img class="pics" src="imgs/cust11.jpg" alt="Customization part 11">
+                  </div>
+                  <h5 class="card-title" style="font-weight: bold;">Artur GPJ</h5>
+                  <p class="card-text">
+                    Seu mini Resumo aqui...
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+          // Carregar a barra lateral usando JavaScript
+          $("#sidebarContainer").load("sidebar.html", function () {
+            // Depois de carregar a barra lateral, carregar o footer
+            $("#footerContainer").load("footer.html", function () {
+              // Mostrar o footer quando todo o conteúdo estiver carregado
+              $(".footer").css("display", "block");
+  
+              // Verificar se o conteúdo da página é maior que a janela do navegador
+              var windowHeight = $(window).height();
+              var documentHeight = $(document).height();
+              if (documentHeight > windowHeight) {
+                // Se o conteúdo for maior que a janela, ajustar o footer para que ele fique abaixo do conteúdo
+                $(".footer").css({
+                  position: "relative",
+                  bottom: "auto",
+                  left: "auto",
+                });
+              } else {
+                // Se o conteúdo não for maior que a janela, ajustar o footer para que ele fique no final da página
+                $(".footer").css({
+                  position: "fixed",
+                  bottom: "0",
+                  left: "0",
+                });
+              }
+            });
+          });
+        });
+      </script>
+</body>
+</html>
