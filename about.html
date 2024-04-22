@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre nós</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="sidebar-mini layout-fixed">
+    <div id="sidebarContainer" class="wrapper"></div>
+
+    <br />
+    <h1 class="text-center mb-4">Desenvolvedores do Projeto</h1>
+    <div class="content-wrapper">
+      <div class="content p-4">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                class="img-fluid rounded-circle mb-3 pics align-self-center"
+                src="imgs/about/about.jpg"
+                alt="Richard G. Lara"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title" style="font-weight: bold">
+                  Richard G. Lara
+                </h5>
+                <p class="card-text">
+                 Aguardando Informações
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                class="img-fluid rounded-circle mb-3 pics align-self-center"
+                src="imgs/about/about.jpg"
+                alt="Jefferson Pedro"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title" style="font-weight: bold">
+                  Jefferson Pedro
+                </h5>
+                <p class="card-text">
+                  Sou um Analista de Sistemas especializado em banco de dados,
+                  com experiência em desenvolvimento de software e análise de
+                  dados. Trabalho com metodologia Kanban, garantindo a
+                  excelência na entrega de projetos e cumprimento das SLAs.
+                  Tenho habilidades avançadas em Java (com Spring Boot), Python,
+                  Angular (com TypeScript) e bancos de dados MySQL e PostgreSQL.
+                  Lidero o projeto NutriNotes, focado em otimizar processos de
+                  atendimento para nutricionistas. Estou aprimorando meu
+                  conhecimento em computação em nuvem com um curso em AWS e
+                  Microservices com Java.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                class="img-fluid rounded-circle mb-3 pics align-self-center"
+                src="imgs/about/Artur.jpeg"
+                alt="Artur Gustavo"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title" style="font-weight: bold">
+                  Artur Gustavo
+                </h5>
+                <p class="card-text"> Meu nome é Artur, tenho 27 anos. Atualmente, trabalho como
+                    helpdesk em uma empresa de comercio que atende o ramo de
+                    marcenarias. Meu trabalho consiste em garantir que nossa
+                    infraestrutura tecnológica opere de forma eficiente. Sou
+                    desenvolvedor por hobby e gosto de criar automações para
+                    simplificar processos repetitivos do dia a dia, utilizo
+                    diversas linguagens de programação para criar soluções
+                    inteligentes que aumentam a eficiência e a produtividade,
+                    tanto para mim quanto para minha equipe.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                class="img-fluid rounded-circle mb-3 pics align-self-center"
+                src="imgs/about/about.jpg"
+                alt="Klaydson Silva"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title" style="font-weight: bold">
+                  Klaydson Silva
+                </h5>
+                <p class="card-text">Aguardando Informações</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                class="img-fluid rounded-circle mb-3 pics align-self-center"
+                src="imgs/about/about.jpg"
+                alt="Yasmin Guerra"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title" style="font-weight: bold">
+                  Yasmin Guerra
+                </h5>
+                <p class="card-text">Aguardando Informações</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div id="footerContainer" class="wrapper"></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Carregar a barra lateral usando JavaScript
+        $("#sidebarContainer").load("navbar.html", function () {
+          // Depois de carregar a barra lateral, carregar o footer
+          $("#footerContainer").load("footer.html", function () {
+            // Mostrar o footer quando todo o conteúdo estiver carregado
+            $(".footer").css("display", "block");
+
+            // Verificar se o conteúdo da página é maior que a janela do navegador
+            var windowHeight = $(window).height();
+            var documentHeight = $(document).height();
+            if (documentHeight > windowHeight) {
+              // Se o conteúdo for maior que a janela, ajustar o footer para que ele fique abaixo do conteúdo
+              $(".footer").css({
+                position: "relative",
+                bottom: "auto",
+                left: "auto",
+              });
+            } else {
+              // Se o conteúdo não for maior que a janela, ajustar o footer para que ele fique no final da página
+              $(".footer").css({
+                position: "fixed",
+                bottom: "0",
+                left: "0",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

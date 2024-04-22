@@ -1,260 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro - Custom LightSabers</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="sidebar-mini layout-fixed">
-<div id="sidebarContainer" class="wrapper"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - Custom LightSabers</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="navbar-mini layout-fixed">
+    <div id="navbarContainer" class="wrapper"></div>
 
-<!-- Conteúdo da página -->
-<div class="content-wrapper">
-  <div class="content p-4">
-    <h1 class="text-center mb-4">Registro</h1>
-    <form>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="fullname">Nome Completo</label>
-          <input
-            type="text"
-            class="form-control"
-            id="fullname"
-            name="fullname"
-            placeholder="Digite seu nome completo"
-            required
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="email">E-mail</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            placeholder="Digite seu e-mail"
-            required
-          />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="username">Usuário</label>
-          <input
-            type="text"
-            class="form-control"
-            id="username"
-            name="username"
-            placeholder="Digite um nome de usuário"
-            required
-          />
-        </div>
-        <div class="form-group col-md-6">
-          <label for="password">Senha</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            name="password"
-            placeholder="Digite sua senha"
-            required
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="city">Cidade</label>
-        <select class="form-control" id="city" name="city" required>
-          <option value="" selected disabled>Selecione sua cidade</option>
-          <option value="Belo Horizonte">Belo Horizonte</option>
-          <option value="Vespasiano">Vespasiano</option>
-          <option value="Ribeirão das Neves">Ribeirão das Neves</option>
-          <option value="Contagem">Contagem</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="gender">Gênero</label>
-          <div>
-            <div class="form-check form-check-inline">
+    <!-- Conteúdo da página -->
+    <div class="content-wrapper">
+      <div class="content p-4">
+        <h1 class="text-center mb-4">Registro</h1>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="fullname">Nome Completo</label>
               <input
-                class="form-check-input"
-                type="radio"
-                name="gender"
-                id="male"
-                value="male"
+                type="text"
+                class="form-control"
+                id="fullname"
+                name="fullname"
+                placeholder="Digite seu nome completo"
                 required
               />
-              <label class="form-check-label" for="male">Masculino</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-group col-md-6">
+              <label for="email">E-mail</label>
               <input
-                class="form-check-input"
-                type="radio"
-                name="gender"
-                id="female"
-                value="female"
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
                 required
               />
-              <label class="form-check-label" for="female">Feminino</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gender"
-                id="other"
-                value="other"
-                required
-              />
-              <label class="form-check-label" for="other">Outro</label>
             </div>
           </div>
-        </div>
-      
-        <div class="form-group col-md-6">
-          <label for="have">Qual sabre você já possui?</label>
-          <div>
-            <div class="form-check">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="username">Usuário</label>
               <input
-                class="form-check-input"
-                type="checkbox"
-                id="grafelex"
-                name="have[]"
-                value="grafelex"
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                placeholder="Digite um nome de usuário"
+                required
               />
-              <label class="form-check-label" for="grafelex">Graflex</label>
             </div>
-            <div class="form-check">
+            <div class="form-group col-md-6">
+              <label for="password">Senha</label>
               <input
-                class="form-check-input"
-                type="checkbox"
-                id="scarlet"
-                name="have[]"
-                value="scarlet"
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Digite sua senha"
+                required
               />
-              <label class="form-check-label" for="scarlet">Scarlet</label>
             </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="oblivion"
-                name="have[]"
-                value="oblivion"
-              />
-              <label class="form-check-label" for="oblivion">Oblivion Neopixel</label>
+          </div>
+          <div class="form-group">
+            <label for="city">Cidade</label>
+            <select class="form-control" id="city" name="city" required>
+              <option value="" selected disabled>Selecione sua cidade</option>
+              <option value="Belo Horizonte">Belo Horizonte</option>
+              <option value="Vespasiano">Vespasiano</option>
+              <option value="Ribeirão das Neves">Ribeirão das Neves</option>
+              <option value="Contagem">Contagem</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="gender">Gênero</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    value="male"
+                    required
+                  />
+                  <label class="form-check-label" for="male">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="female"
+                    value="female"
+                    required
+                  />
+                  <label class="form-check-label" for="female">Feminino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="other"
+                    value="other"
+                    required
+                  />
+                  <label class="form-check-label" for="other">Outro</label>
+                </div>
+              </div>
             </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="others"
-                name="have[]"
-                value="others"
-              />
-              <label class="form-check-label" for="others">Outros</label>
+
+            <div class="form-group col-md-6">
+              <label for="have">Qual sabre você já possui?</label>
+              <div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="grafelex"
+                    name="have[]"
+                    value="grafelex"
+                  />
+                  <label class="form-check-label" for="grafelex">Graflex</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="scarlet"
+                    name="have[]"
+                    value="scarlet"
+                  />
+                  <label class="form-check-label" for="scarlet">Scarlet</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="oblivion"
+                    name="have[]"
+                    value="oblivion"
+                  />
+                  <label class="form-check-label" for="oblivion"
+                    >Oblivion Neopixel</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="others"
+                    name="have[]"
+                    value="others"
+                  />
+                  <label class="form-check-label" for="others">Outros</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="none"
+                    name="have[]"
+                    value="none"
+                  />
+                  <label class="form-check-label" for="none">Nenhum</label>
+                </div>
+              </div>
             </div>
-            <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="none"
-                  name="have[]"
-                  value="none"
-                />
-                <label class="form-check-label" for="none">Nenhum</label>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <button type="reset" class="btn btn-secondary btn-block">
+                Limpar
+              </button>
+            </div>
+            <div class="form-group col-md-6">
+              <button type="submit" class="btn btn-primary btn-block">
+                Registrar
+              </button>
+            </div>
+          </div>
+        </form>
+        <p class="mt-3 text-center">
+          Já tem uma conta? <a href="login">Faça login</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div id="footerContainer" class="wrapper"></div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Cadastro Efetuado
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p id="form-data"></p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fechar
+            </button>
           </div>
         </div>
       </div>
-      
-      
     </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <button type="reset" class="btn btn-secondary btn-block">Limpar</button>
-        </div>
-        <div class="form-group col-md-6">
-          <button type="submit" class="btn btn-primary btn-block">Registrar</button>
-        </div>
-      </div>
-      
 
-    </form>
-    <p class="mt-3 text-center">
-      Já tem uma conta? <a href="/login.html">Faça login</a>
-    </p>
-  </div>
-</div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- Footer -->
-<footer class="footer">
-  <div id="footerContainer" class="wrapper"></div>
-</footer>
+    <script>
+      $(document).ready(function () {
+        // Captura o evento de submissão do formulário
+        $("form").submit(function (e) {
+          // Evita o comportamento padrão de submissão do formulário
+          e.preventDefault();
 
+          // Obtém os dados do formulário
+          var formData = $(this).serializeArray();
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Cadastro Efetuado</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p id="form-data"></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+          // Cria uma string para exibir os dados no modal
+          var modalContent = "<ul>";
+          formData.forEach(function (item) {
+            modalContent +=
+              "<li><strong>" + item.name + ":</strong> " + item.value + "</li>";
+          });
+          modalContent += "</ul>";
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          // Exibe os dados no modal
+          $("#form-data").html(modalContent);
 
-
-<script>
-    $(document).ready(function () {
-      // Captura o evento de submissão do formulário
-      $('form').submit(function (e) {
-        // Evita o comportamento padrão de submissão do formulário
-        e.preventDefault();
-        
-        // Obtém os dados do formulário
-        var formData = $(this).serializeArray();
-        
-        // Cria uma string para exibir os dados no modal
-        var modalContent = '<ul>';
-        formData.forEach(function (item) {
-          modalContent += '<li><strong>' + item.name + ':</strong> ' + item.value + '</li>';
+          // Abre o modal
+          $("#myModal").modal("show");
         });
-        modalContent += '</ul>';
-        
-        // Exibe os dados no modal
-        $('#form-data').html(modalContent);
-        
-        // Abre o modal
-        $('#myModal').modal('show');
       });
-    });
-  </script>
-  
+    </script>
 
-<script>
-  // Carregar a barra lateral usando JavaScript
-  $(document).ready(function () {
-    $("#sidebarContainer").load("sidebar.html", function () {
-      // Depois de carregar a barra lateral, carregar o footer
-      $("#footerContainer").load("footer.html");
-    });
-  });
-</script>
+    <script>
+      // Carregar a barra lateral usando JavaScript
+      $(document).ready(function () {
+        $("#navbarContainer").load("navbar.html", function () {
+          // Depois de carregar a barra lateral, carregar o footer
+         $("#footerContainer").load("footer.html", function () {
+            // Mostrar o footer quando todo o conteúdo estiver carregado
+            $(".footer").css("display", "block");
 
-</body>
+            // Verificar se o conteúdo da página é maior que a janela do navegador
+            var windowHeight = $(window).height();
+            var documentHeight = $(document).height();
+            if (documentHeight > windowHeight) {
+              // Se o conteúdo for maior que a janela, ajustar o footer para que ele fique abaixo do conteúdo
+              $(".footer").css({
+                position: "relative",
+                bottom: "auto",
+                left: "auto",
+              });
+            } else {
+              // Se o conteúdo não for maior que a janela, ajustar o footer para que ele fique no final da página
+              $(".footer").css({
+                position: "fixed",
+                bottom: "0",
+                left: "0",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

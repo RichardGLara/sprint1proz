@@ -10,65 +10,66 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="sidebar-mini layout-fixed">
-    <div id="sidebarContainer" class="wrapper"></div>
+  <body class="navbar-mini layout-fixed">
+    <div id="navbarContainer" class="wrapper"></div>
 
     <!-- Conteúdo da página -->
-    <div class="content-wrapper">
-      <div class="content p-4" style="max-width: 400px; margin: 60px;">
-        <h1 class="text-center mb-4">Contato</h1>
-        <form>
-          <div class="form-group">
-            <label for="name">Nome</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              name="name"
-              placeholder="Digite seu nome"
-            />
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              placeholder="Digite seu e-mail"
-            />
-          </div>
-          <div class="form-group">
-            <label for="message">Mensagem</label>
-            <textarea
-              class="form-control"
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Digite sua mensagem"
-            ></textarea>
-          </div>          
-          <div class="form-group">
-            <label for="department">Departamento</label>
-            <select class="form-control" id="department" name="department">
-              <option value="products">Produtos</option>
-              <option value="services">Serviços</option>
-              <option value="others">Outros</option>
-            </select>
-          </div>
-          <div class="btn-group">
-            <div>
-              <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-            </div>
-            <div class="space"></div>
-            <div>
-              <button type="reset" class="btn btn-danger">Limpar</button>
-            </div>
-          </div>
-        </form>
+<div class="content-wrapper">
+  <div class="content p-4 mx-auto" style="max-width: 800px">
+    <h1 class="text-center mb-4">Contato</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Digite seu nome"
+        />
       </div>
-    </div>
-   <br>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Digite seu e-mail"
+        />
+      </div>
+      <div class="form-group">
+        <label for="message">Mensagem</label>
+        <textarea
+          class="form-control"
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Digite sua mensagem"
+        ></textarea>
+      </div>          
+      <div class="form-group">
+        <label for="department">Departamento</label>
+        <select class="form-control" id="department" name="department">
+          <option value="products">Produtos</option>
+          <option value="services">Serviços</option>
+          <option value="others">Outros</option>
+        </select>
+      </div>
+      <div class="btn-group d-flex justify-content-center">
+        <div>
+          <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+        </div>
+        <div class="space"></div>
+        <div>
+          <button type="reset" class="btn btn-danger">Limpar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<br>
+
     <!-- Footer -->
     <footer class="footer">
       <div id="footerContainer" class="wrapper"></div>
@@ -80,7 +81,7 @@
     <script>
       // Carregar a barra lateral usando JavaScript
       $(document).ready(function () {
-        $("#sidebarContainer").load("sidebar.html", function () {
+        $("#navbarContainer").load("navbar.html", function () {
           // Depois de carregar a barra lateral, carregar o footer
           $("#footerContainer").load("footer.html");
         });

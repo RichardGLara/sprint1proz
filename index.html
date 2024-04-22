@@ -10,23 +10,25 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="sidebar-mini layout-fixed">
-    <div id="sidebarContainer" class="wrapper"></div>
+  <body class="navbar-mini layout-fixed">
+    <div id="navbarContainer" class="wrapper"></div>
 
     <!-- Conteúdo da página -->
     <div class="content-wrapper">
-      <div class="content p-4">
+      <div class="text-center">
+        <br />
         <h1>Bem-vindo à</h1>
-        <img class="index_logo" src="imgs/logo.png" alt="">
+        <img class="index_logo" src="imgs/logo.png" alt="" />
         <div class="info_index">
-          <p>
-            Somos especialistas em sabres de luz. <br>
-            Dispomos da mais variada gama de peças e artigos para a customização e reparo do seu sabre de luz. <br>
-            Temos tudo o que você precisa para melhorar sua performance nos treinos, duelos ou batalhas.<br>
-            Explore nossos produtos e serviços e entre em contato conosco para qualquer dúvida.
-          </p>
+          Somos especialistas em sabres de luz. <br />
+          Dispomos da mais variada gama de peças e artigos para a customização e
+          reparo do seu sabre de luz. <br />
+          Temos tudo o que você precisa para melhorar sua performance nos
+          treinos, duelos ou batalhas.<br />
+          Explore nossos produtos e serviços e entre em contato conosco para
+          qualquer dúvida.
         </div>
-        <img class="view_index" src="imgs/vitrini.png" alt="">
+        <img class="view_index" src="imgs/vitrini.png" alt="" />
         <p><a href="products.html" class="btn btn-primary">Ver Produtos</a></p>
       </div>
     </div>
@@ -42,7 +44,7 @@
     <script>
       $(document).ready(function () {
         // Carregar a barra lateral usando JavaScript
-        $("#sidebarContainer").load("sidebar.html", function () {
+        $("#navbarContainer").load("navbar.html", function () {
           // Depois de carregar a barra lateral, carregar o footer
           $("#footerContainer").load("footer.html", function () {
             // Mostrar o footer quando todo o conteúdo estiver carregado
