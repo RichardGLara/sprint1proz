@@ -5,31 +5,13 @@ body {
     font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Estilo da barra lateral */
-.main-sidebar {
-    background-color: #343a40;
-    color: #ffffff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 250px;
-}
 
-.sidebar-brand {
-    padding: 10px 0;
-    text-align: center;
-}
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.sidebar {
-    padding-bottom: 60px;
-    /* Para deixar espaço para o botão de alternância */
-}
 
 /* Estilo do conteúdo */
 .content-wrapper {
@@ -37,22 +19,7 @@ body {
     padding: 10px;
 }
 
-/* Estilo do botão de alternância */
-.nav-link.sidebar-toggle {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: #ffffff;
-}
 
-/* Estilo dos ícones do menu */
-.nav-icon {
-    margin-right: 10px;
-}
-
-.brand-link {
-    text-align: center;
-}
 
 .main-footer {
     background-color: #343a40;
@@ -61,10 +28,6 @@ body {
     text-align: center;
 }
 
-.content-wrapper {
-    flex: 1;
-    /* Faz com que o conteúdo se expanda para preencher o espaço restante */
-}
 
 .footer {
     width: 100%;
@@ -76,13 +39,13 @@ body {
 
 .space {
     height: 10px;
-    width: 60px;
+    width: 10px;
 }
 
 .info_index {
-    max-width: 400px;
-    margin-top: 60px;
-    margin-bottom: 40px;
+    
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .view_index {
@@ -102,6 +65,32 @@ body {
 }
 
 .pics {
-    width: 100%;
-    margin: 4px;
+    width: 80%;
+    margin-top: 30px;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px; /* largura da barra de rolagem */
+  }
+  
+  /* Cor da barra de rolagem */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* cor de fundo */
+  }
+  
+  /* Cor do indicador da barra de rolagem */
+  ::-webkit-scrollbar-thumb {
+    background: #212529; /* cor do indicador */
+  }
+  
+  /* Ao passar o mouse sobre a barra de rolagem */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* cor do indicador ao passar o mouse */
+  }
+  
+
+  .card {
+    height: 100%;
+    border-color: #939ba3
 }
