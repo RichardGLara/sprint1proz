@@ -4,18 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serviços - Custom LightSabers</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="navbar-mini layout-fixed">
     <div id="navbarContainer" class="wrapper"></div>
 
     <!-- Conteúdo da página -->
     <div class="content-wrapper">
-      <div class="content p-4">
+      <div class="container-fluid px-4">
         <h1 class="text-center mb-4">Serviços</h1>
         <div class="row">
           <div class="col-md-6">
@@ -28,40 +23,174 @@
                   suas preferências. De acabamentos especiais a alterações de
                   design, estamos aqui para transformar sua visão em realidade.
                 </p>
-                <div class="container_pics row">
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust01.jpg" alt="" />
+                <div
+                  id="carouselCustoms"
+                  class="carousel slide mb-3"
+                  data-bs-ride="carousel"
+                  data-bs-interval="3000"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="imgs/customs/cust01.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust02.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust03.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust04.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust05.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust06.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust07.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust08.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust09.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust10.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/customs/cust11.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <!-- Adicione mais itens conforme necessário -->
                   </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust02.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust03.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust04.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust05.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust06.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust07.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust08.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust09.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust10.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/customs/cust11.jpg" alt="" />
-                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselCustoms"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Anterior</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselCustoms"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Próximo</span>
+                  </button>
+                  <ol class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="0"
+                      class="active"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="3"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="4"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="5"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="6"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="7"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="8"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="9"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselCustoms"
+                      data-bs-slide-to="10"
+                    ></button>
+                  </ol>
                 </div>
               </div>
             </div>
@@ -77,33 +206,130 @@
                   está pronta para ajudar a restaurar seu sabre à sua condição
                   ideal.
                 </p>
-                <div class="container_pics row">
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/pecas/peca01.jpg" alt="" />
+                <div
+                  id="carouselRepairs"
+                  class="carousel slide mb-3"
+                  data-bs-ride="carousel"
+                  data-bs-interval="3000"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="imgs/pecas/peca01.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/pecas/peca02.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/pecas/peca03.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/pecas/peca04.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/pecas/peca05.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/pecas/peca06.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="imgs/pecas/peca07.jpg"
+                        class="d-block w-100"
+                        alt=""
+                      />
+                    </div>
+                    <!-- Adicione mais itens conforme necessário -->
                   </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/pecas/peca02.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/pecas/peca03.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/pecas/peca04.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/pecas/peca05.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/pecas/peca06.jpg" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <img class="pics" src="imgs/pecas/peca07.jpg" alt="" />
-                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselRepairs"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Anterior</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselRepairs"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Próximo</span>
+                  </button>
+                  <ol class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#carouselRepairs"
+                      data-bs-slide-to="0"
+                      class="active"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselRepairs"
+                      data-bs-slide-to="1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselRepairs"
+                      data-bs-slide-to="2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselRepairs"
+                      data-bs-slide-to="3"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselRepairs"
+                      data-bs-slide-to="4"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselRepairs"
+                      data-bs-slide-to="5"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselRepairs"
+                      data-bs-slide-to="6"
+                    ></button>
+                  </ol>
                 </div>
               </div>
             </div>
           </div>
-          <!--  -->
         </div>
       </div>
     </div>

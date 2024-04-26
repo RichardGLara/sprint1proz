@@ -4,273 +4,231 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro - Custom LightSabers</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="navbar-mini layout-fixed">
     <div id="navbarContainer" class="wrapper"></div>
 
-    <!-- Conteúdo da página -->
-    <div class="content-wrapper">
-      <div class="content p-4">
-        <h1 class="text-center mb-4">Registro</h1>
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="fullname">Nome Completo</label>
-              <input
-                type="text"
-                class="form-control"
-                id="fullname"
-                name="fullname"
-                placeholder="Digite seu nome completo"
-                required
-              />
-            </div>
-            <div class="form-group col-md-6">
-              <label for="email">E-mail</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="Digite seu e-mail"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="username">Usuário</label>
-              <input
-                type="text"
-                class="form-control"
-                id="username"
-                name="username"
-                placeholder="Digite um nome de usuário"
-                required
-              />
-            </div>
-            <div class="form-group col-md-6">
-              <label for="password">Senha</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                name="password"
-                placeholder="Digite sua senha"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="city">Cidade</label>
-            <select class="form-control" id="city" name="city" required>
-              <option value="" selected disabled>Selecione sua cidade</option>
-              <option value="Belo Horizonte">Belo Horizonte</option>
-              <option value="Vespasiano">Vespasiano</option>
-              <option value="Ribeirão das Neves">Ribeirão das Neves</option>
-              <option value="Contagem">Contagem</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="gender">Gênero</label>
-              <div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="gender"
-                    id="male"
-                    value="male"
-                    required
-                  />
-                  <label class="form-check-label" for="male">Masculino</label>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="text-center mb-4">Registro</h1>
+              <form>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="fullname" class="form-label"
+                      >Nome Completo</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fullname"
+                      name="fullname"
+                      placeholder="Digite seu nome completo"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="Digite seu e-mail"
+                      required
+                    />
+                  </div>
                 </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="gender"
-                    id="female"
-                    value="female"
-                    required
-                  />
-                  <label class="form-check-label" for="female">Feminino</label>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="username" class="form-label">Usuário</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="username"
+                      name="username"
+                      placeholder="Digite um nome de usuário"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      name="password"
+                      placeholder="Digite sua senha"
+                      required
+                    />
+                  </div>
                 </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="gender"
-                    id="other"
-                    value="other"
-                    required
-                  />
-                  <label class="form-check-label" for="other">Outro</label>
-                </div>
-              </div>
-            </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="state" class="form-label">Estado</label>
+                    <select
+                      class="form-select"
+                      id="state"
+                      name="state"
+                      required
+                    >
+                      <option value="" selected disabled>
+                        Selecione seu estado
+                      </option>
+                      <option value="MG">Minas Gerais</option>
+                      <option value="SP">São Paulo</option>
+                     
+                      
+                    </select>
+                  </div>
 
-            <div class="form-group col-md-6">
-              <label for="have">Qual sabre você já possui?</label>
-              <div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="grafelex"
-                    name="have[]"
-                    value="grafelex"
-                  />
-                  <label class="form-check-label" for="grafelex">Graflex</label>
+                  <div class="col-md-6 mb-3">
+                    <label for="city" class="form-label">Cidade</label>
+                    <select class="form-select" id="city" name="city" disabled required>
+                      <option value="" selected disabled>
+                        Selecione sua cidade
+                      </option>                      
+                    </select>
+                  </div>
                 </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="scarlet"
-                    name="have[]"
-                    value="scarlet"
-                  />
-                  <label class="form-check-label" for="scarlet">Scarlet</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="oblivion"
-                    name="have[]"
-                    value="oblivion"
-                  />
-                  <label class="form-check-label" for="oblivion"
-                    >Oblivion Neopixel</label
-                  >
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="others"
-                    name="have[]"
-                    value="others"
-                  />
-                  <label class="form-check-label" for="others">Outros</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="none"
-                    name="have[]"
-                    value="none"
-                  />
-                  <label class="form-check-label" for="none">Nenhum</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <button type="reset" class="btn btn-secondary btn-block">
-                Limpar
-              </button>
-            </div>
-            <div class="form-group col-md-6">
-              <button type="submit" class="btn btn-primary btn-block">
-                Registrar
-              </button>
-            </div>
-          </div>
-        </form>
-        <p class="mt-3 text-center">
-          Já tem uma conta? <a href="login">Faça login</a>
-        </p>
-      </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div id="footerContainer" class="wrapper"></div>
-    </footer>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Gênero</label>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="gender"
+                        id="male"
+                        value="male"
+                        required
+                      />
+                      <label class="form-check-label" for="male"
+                        >Masculino</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="gender"
+                        id="female"
+                        value="female"
+                        required
+                      />
+                      <label class="form-check-label" for="female"
+                        >Feminino</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="gender"
+                        id="other"
+                        value="other"
+                        required
+                      />
+                      <label class="form-check-label" for="other">Outro</label>
+                    </div>
+                  </div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="myModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Cadastro Efetuado
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p id="form-data"></p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Fechar
-            </button>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Qual sabre você já possui?</label>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="grafelex"
+                        name="have[]"
+                        value="grafelex"
+                      />
+                      <label class="form-check-label" for="grafelex"
+                        >Graflex</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="scarlet"
+                        name="have[]"
+                        value="scarlet"
+                      />
+                      <label class="form-check-label" for="scarlet"
+                        >Scarlet</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="oblivion"
+                        name="have[]"
+                        value="oblivion"
+                      />
+                      <label class="form-check-label" for="oblivion"
+                        >Oblivion Neopixel</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="others"
+                        name="have[]"
+                        value="others"
+                      />
+                      <label class="form-check-label" for="others"
+                        >Outros</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="none"
+                        name="have[]"
+                        value="none"
+                      />
+                      <label class="form-check-label" for="none">Nenhum</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary">
+                    Enviar Mensagem
+                  </button>
+                  <button type="reset" class="btn btn-danger">Limpar</button>
+                </div>
+              </form>
+              <p class="mt-3 text-center">
+                Já tem uma conta? <a href="login">Faça login</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <br />
+    <footer class="footer">
+      <div id="footerContainer" class="wrapper"></div>
+    </footer>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-r0Q4Qp8jQfXblws69cwyRHc1eKFOIK9Gj4A+8ip8hQl94/zAQr70/zFnmmE9liDg"
+      crossorigin="anonymous"
+    ></script>
 
+    <!-- Carregar a barra de navegação e o footer -->
     <script>
       $(document).ready(function () {
-        // Captura o evento de submissão do formulário
-        $("form").submit(function (e) {
-          // Evita o comportamento padrão de submissão do formulário
-          e.preventDefault();
-
-          // Obtém os dados do formulário
-          var formData = $(this).serializeArray();
-
-          // Cria uma string para exibir os dados no modal
-          var modalContent = "<ul>";
-          formData.forEach(function (item) {
-            modalContent +=
-              "<li><strong>" + item.name + ":</strong> " + item.value + "</li>";
-          });
-          modalContent += "</ul>";
-
-          // Exibe os dados no modal
-          $("#form-data").html(modalContent);
-
-          // Abre o modal
-          $("#myModal").modal("show");
-        });
-      });
-    </script>
-
-    <script>
-      // Carregar a barra de navegação usando JavaScript
-      $(document).ready(function () {
+        // Carregar a barra de navegação usando JavaScript
         $("#navbarContainer").load("navbar.html", function () {
           // Depois de carregar a barra de navegação, carregar o footer
           $("#footerContainer").load("footer.html", function () {
@@ -298,6 +256,50 @@
           });
         });
       });
+
+      $(document).ready(function () {
+  // Desativar o menu suspenso da cidade inicialmente
+  $("#city").prop("disabled", true);
+
+  // Adicionar evento de mudança ao menu suspenso do estado
+  $("#state").change(function () {
+    // Obter o valor do estado selecionado
+    var selectedState = $(this).val();
+    
+    // Limpar as opções atuais do menu suspenso da cidade
+    $("#city").empty();
+
+    // Habilitar o menu suspenso da cidade quando um estado for selecionado
+    $("#city").prop("disabled", false);
+
+    // Adicionar novas opções com base no estado selecionado
+    if (selectedState === "MG") {
+      $("#city").append(
+        $("<option>", {
+          value: "Belo Horizonte",
+          text: "Belo Horizonte"
+        }),
+        $("<option>", {
+          value: "Contagem",
+          text: "Contagem"
+        })
+      );
+    } else if (selectedState === "SP") {
+      $("#city").append(
+        $("<option>", {
+          value: "São Paulo",
+          text: "São Paulo"
+        }),
+        $("<option>", {
+          value: "Guarulhos",
+          text: "Guarulhos"
+        })
+      );
+    }
+  });
+});
+
+
     </script>
   </body>
 </html>

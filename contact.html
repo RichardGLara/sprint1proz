@@ -4,87 +4,280 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato - Custom LightSabers</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>    
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="navbar-mini layout-fixed">
     <div id="navbarContainer" class="wrapper"></div>
 
     <!-- Conteúdo da página -->
-<div class="content-wrapper">
-  <div class="content p-4 mx-auto" style="max-width: 800px">
-    <h1 class="text-center mb-4">Contato</h1>
-    <form>
-      <div class="form-group">
-        <label for="name">Nome</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          name="name"
-          placeholder="Digite seu nome"
-        />
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+        <h1 class="text-center mb-4">Contato</h1>
+        <form id="contactForm">
+          <div class="mb-3">
+            <label
+              for="name"
+              class="form-label"
+              data-bs-toggle="tooltip"
+              title="Digite apenas letras e espaços"
+              >Nome</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              autocomplete="off"
+              placeholder="Digite seu nome"
+              data-bs-toggle="tooltip"
+              title="Digite apenas letras e espaços. Exemplo: João da Silva"
+              data-bs-placement="right"
+            />
+            <div id="nameError" class="invalid-feedback"></div>
+          </div>
+          <div class="mb-3">
+            <label
+              for="email"
+              class="form-label"
+              data-bs-toggle="tooltip"
+              title="Digite um endereço de e-mail válido"
+              >E-mail</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              autocomplete="off"
+              placeholder="Digite seu e-mail"
+              data-bs-toggle="tooltip"
+              title="Digite um endereço de e-mail válido. Exemplo: exemplo@dominio.com"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-placement="right"
+            />
+            <div id="emailError" class="invalid-feedback"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensagem</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Digite sua mensagem"
+              data-bs-toggle="tooltip"
+              title="Digite sua mensagem"
+              data-bs-placement="right"
+            ></textarea>
+            <div id="messageError" class="invalid-feedback"></div>
+          </div>
+          <div class="mb-3">
+            <label for="department" class="form-label">Departamento</label>
+            <select class="form-control" id="department" name="department">
+              <option value="" selected disabled>Selecione</option>
+              <option value="products">Produtos</option>
+              <option value="services">Serviços</option>
+              <option value="others">Outros</option>
+            </select>
+            <div id="departmentError" class="invalid-feedback"></div>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">
+              Enviar Mensagem
+            </button>
+            <button type="reset" class="btn btn-danger">Limpar</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          name="email"
-          placeholder="Digite seu e-mail"
-        />
-      </div>
-      <div class="form-group">
-        <label for="message">Mensagem</label>
-        <textarea
-          class="form-control"
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Digite sua mensagem"
-        ></textarea>
-      </div>          
-      <div class="form-group">
-        <label for="department">Departamento</label>
-        <select class="form-control" id="department" name="department">
-          <option value="products">Produtos</option>
-          <option value="services">Serviços</option>
-          <option value="others">Outros</option>
-        </select>
-      </div>
-      <div class="btn-group d-flex justify-content-center">
-        <div>
-          <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-        </div>
-        <div class="space"></div>
-        <div>
-          <button type="reset" class="btn btn-danger">Limpar</button>
-        </div>
-      </div>
-    </form>
-  </div>
+    </div>
 </div>
-<br>
+</div>
+</div>
+    <br />
+
+    <!-- Modal de confirmação -->
+    <div
+      class="modal fade"
+      id="confirmationModal"
+      tabindex="-1"
+      aria-labelledby="confirmationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmationModalLabel">
+              Mensagem Enviada
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Sua mensagem foi enviada com sucesso!</p>
+            <p><strong>Nome:</strong> <span id="modalName"></span></p>
+            <p><strong>E-mail:</strong> <span id="modalEmail"></span></p>
+            <p><strong>Mensagem:</strong> <span id="modalMessage"></span></p>
+            <p>
+              <strong>Departamento:</strong> <span id="modalDepartment"></span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
       <div id="footerContainer" class="wrapper"></div>
     </footer>
-  </br>
+ 
+
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
 
     <script>
-      // Carregar a barra de navegação usando JavaScript
       $(document).ready(function () {
+        // Carregar a barra de navegação usando JavaScript
         $("#navbarContainer").load("navbar.html", function () {
           // Depois de carregar a barra de navegação, carregar o footer
-          $("#footerContainer").load("footer.html");
+          $("#footerContainer").load("footer.html", function () {
+            // Mostrar o footer quando todo o conteúdo estiver carregado
+            $(".footer").css("display", "block");
+
+            // Verificar se o conteúdo da página é maior que a janela do navegador
+            var windowHeight = $(window).height();
+            var documentHeight = $(document).height();
+            if (documentHeight > windowHeight) {
+              // Se o conteúdo for maior que a janela, ajustar o footer para que ele fique abaixo do conteúdo
+              $(".footer").css({
+                position: "relative",
+                bottom: "auto",
+                left: "auto",
+              });
+            } else {
+              // Se o conteúdo não for maior que a janela, ajustar o footer para que ele fique no final da página
+              $(".footer").css({
+                position: "fixed",
+                bottom: "0",
+                left: "0",
+              });
+            }
+          });
         });
       });
+
+      // Adicionar evento para mostrar modal após envio do formulário
+      $("#contactForm").submit(function (event) {
+        event.preventDefault(); // Evita o envio padrão do formulário
+
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var message = $("#message").val();
+        var department = $("#department").val();
+        var nameRegex = /^[a-zA-Z\s]+$/;
+        var emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+
+        // Validar nome
+        if (!nameRegex.test(name)) {
+          $("#name").addClass("is-invalid");
+          $("#nameError").text("Por favor, insira apenas letras e espaços.");
+          event.preventDefault();
+          return;
+        } else {
+          $("#name").removeClass("is-invalid");
+          $("#nameError").text("");
+        }
+
+        // Validar email
+        if (!emailRegex.test(email)) {
+          $("#email").addClass("is-invalid");
+          $("#emailError").text(
+            "Por favor, insira um endereço de e-mail válido."
+          );
+          event.preventDefault();
+          return;
+        } else {
+          $("#email").removeClass("is-invalid");
+          $("#emailError").text("");
+        }
+
+        // Validar mensagem
+        if (!message.trim()) {
+          $("#message").addClass("is-invalid");
+          $("#messageError").text("Por favor, digite sua mensagem.");
+          event.preventDefault();
+          return;
+        } else {
+          $("#message").removeClass("is-invalid");
+          $("#messageError").text("");
+        }
+
+        // Validar departamento
+        if (!department) {
+          $("#department").addClass("is-invalid");
+          $("#departmentError").text("Por favor, selecione um departamento.");
+          event.preventDefault();
+          return;
+        } else {
+          $("#department").removeClass("is-invalid");
+          $("#departmentError").text("");
+        }
+
+        // Se todos os campos forem válidos, exibir modal de confirmação
+        $("#modalName").text(name);
+        $("#modalEmail").text(email);
+        $("#modalMessage").text(message);
+        $("#modalDepartment").text($("#department option:selected").text()); // Obtenha o texto do option selecionado
+        $("#confirmationModal").modal("show");
+
+        // Se todos os campos forem válidos, exibir modal de confirmação
+        $("#modalName").text(name);
+        $("#modalEmail").text(email);
+        $("#modalMessage").text(message);
+        $("#modalDepartment").text($("#department option:selected").text()); // Obtenha o texto do option selecionado
+        $("#confirmationModal").modal("show");
+
+        // Limpar os campos do formulário
+        $("#name").val("");
+        $("#email").val("");
+        $("#message").val("");
+        $("#department").val("");
+      });
+    </script>
+
+    <script>
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
     </script>
   </body>
 </html>

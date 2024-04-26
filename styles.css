@@ -10,11 +10,6 @@ body {
   font-weight: bold;
 }
 
-/* Estilo do conteúdo */
-.content-wrapper {
-  margin-left: 20px;
-  padding: 10px;
-}
 
 .main-footer {
   background-color: #343a40;
@@ -83,3 +78,16 @@ body {
   height: 100%;
   border-color: #939ba3;
 }
+
+.tooltip-inner {
+  background-color: #0cf; /* Cor de fundo do tooltip */
+  border: 2px solid black;
+  color: #000000; /* Cor do texto dentro do tooltip */
+}
+
+.tooltip-arrow {
+  border-right-color: red;
+ 
+
+}
+
