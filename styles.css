@@ -10,7 +10,6 @@ body {
   font-weight: bold;
 }
 
-
 .main-footer {
   background-color: #343a40;
   color: #ffffff;
@@ -79,15 +78,52 @@ body {
   border-color: #939ba3;
 }
 
-.tooltip-inner {
-  background-color: #0cf; /* Cor de fundo do tooltip */
-  border: 2px solid black;
-  color: #000000; /* Cor do texto dentro do tooltip */
+@media (max-width: 576px) {
+  .footer-text {
+    text-align: center; /* Reduz o tamanho do texto para dispositivos menores */
+  }
 }
 
-.tooltip-arrow {
-  border-right-color: red;
- 
-
+.total:hover {
+  color: rgb(158, 236, 255);
 }
 
+.total {
+  color: white;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  margin: 0 5px; /* Espaçamento entre os botões */
+}
+
+  .carrinho {
+      width: 100%;
+      background-color: #212529f6; /* cor de fundo */
+      padding: 10px 0; /* espaçamento interno */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra */
+      transition: top 0.3s ease; /* transição suave */
+      text-align: center;
+    }
+
+    .carrinho-fixed {
+      position: fixed;
+      top: 0;
+      z-index: 999; /* z-index para a div ficar acima do conteúdo */
+    }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato - Custom LightSabers</title>
   </head>
+  
   <body class="navbar-mini layout-fixed">
     <div id="navbarContainer" class="wrapper"></div>
 
@@ -160,6 +161,7 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts.js"></script>
 
     <script>
       $(document).ready(function () {
@@ -192,92 +194,19 @@
         });
       });
 
-      // Adicionar evento para mostrar modal após envio do formulário
-      $("#contactForm").submit(function (event) {
-        event.preventDefault(); // Evita o envio padrão do formulário
-
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var message = $("#message").val();
-        var department = $("#department").val();
-        var nameRegex = /^[a-zA-Z\s]+$/;
-        var emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
-
-        // Validar nome
-        if (!nameRegex.test(name)) {
-          $("#name").addClass("is-invalid");
-          $("#nameError").text("Por favor, insira apenas letras e espaços.");
-          event.preventDefault();
-          return;
-        } else {
-          $("#name").removeClass("is-invalid");
-          $("#nameError").text("");
-        }
-
-        // Validar email
-        if (!emailRegex.test(email)) {
-          $("#email").addClass("is-invalid");
-          $("#emailError").text(
-            "Por favor, insira um endereço de e-mail válido."
-          );
-          event.preventDefault();
-          return;
-        } else {
-          $("#email").removeClass("is-invalid");
-          $("#emailError").text("");
-        }
-
-        // Validar mensagem
-        if (!message.trim()) {
-          $("#message").addClass("is-invalid");
-          $("#messageError").text("Por favor, digite sua mensagem.");
-          event.preventDefault();
-          return;
-        } else {
-          $("#message").removeClass("is-invalid");
-          $("#messageError").text("");
-        }
-
-        // Validar departamento
-        if (!department) {
-          $("#department").addClass("is-invalid");
-          $("#departmentError").text("Por favor, selecione um departamento.");
-          event.preventDefault();
-          return;
-        } else {
-          $("#department").removeClass("is-invalid");
-          $("#departmentError").text("");
-        }
-
-        // Se todos os campos forem válidos, exibir modal de confirmação
-        $("#modalName").text(name);
-        $("#modalEmail").text(email);
-        $("#modalMessage").text(message);
-        $("#modalDepartment").text($("#department option:selected").text()); // Obtenha o texto do option selecionado
-        $("#confirmationModal").modal("show");
-
-        // Se todos os campos forem válidos, exibir modal de confirmação
-        $("#modalName").text(name);
-        $("#modalEmail").text(email);
-        $("#modalMessage").text(message);
-        $("#modalDepartment").text($("#department option:selected").text()); // Obtenha o texto do option selecionado
-        $("#confirmationModal").modal("show");
-
-        // Limpar os campos do formulário
-        $("#name").val("");
-        $("#email").val("");
-        $("#message").val("");
-        $("#department").val("");
-      });
+      
     </script>
 
-    <script>
-      const tooltipTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="tooltip"]'
-      );
-      const tooltipList = [...tooltipTriggerList].map(
-        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-      );
-    </script>
+  
+    
+     <style>.tooltip-inner {
+      background-color: #0cf; /* Cor de fundo do tooltip */
+      border: 2px solid black;
+      color: #000000; /* Cor do texto dentro do tooltip */
+    }
+    
+    .tooltip-arrow {
+      border-right-color: red;
+    }</style>
   </body>
 </html>

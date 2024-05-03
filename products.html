@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produtos - Custom LightSabers</title>
     <style>
-      .card {
-        height: 100%;
-      }
-      .card-body {
-        display: flex;
-        flex-direction: column;
-      }
+      /* Seus estilos existentes */
     </style>
   </head>
   <body class="navbar-mini layout-fixed">
     <div id="navbarContainer" class="wrapper"></div>
+    <div class="carrinho" id="carrinho"><li class="nav-link total">
+        Carrinho: <span id="total">0</span></h3>
+      </li></div>
 
     <!-- Conteúdo da página -->
     <div class="content-wrapper">
       <div class="content p-4">
+        
         <h1 class="text-center mb-4">Produtos</h1>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -37,10 +35,24 @@
                   sombrio na história deste sabre. Usado para defender a
                   República, bem como cometer atos terríveis de abate...
                 </p>
+                
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+                  class="quantity-control justify-content-center align-items-center mt-auto"
+                >
+                  <button class="btn" onclick="changeQuantity(0, -1)">-</button>
+                  <span id="quantity0">0</span>
+                  <button class="btn" onclick="changeQuantity(0, 1)">+</button>
+                </div>
+                <p class="card-text text-center">
+                  Preço por item: R$ <span id="price0">50</span>
+                </p>
             </div>
           </div>
+          
+
+          <!-- Produto 2 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -57,10 +69,24 @@
                   um tempo mais antigo, quando os sabres eram mais elegantes e
                   glamurosos.
                 </p>
+                
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+                  class="quantity-control justify-content-center align-items-center mt-auto"
+                >
+                  <button class="btn" onclick="changeQuantity(1, -1)">-</button>
+                  <span id="quantity1">0</span>
+                  <button class="btn" onclick="changeQuantity(1, 1)">+</button>
+                </div>
+                <p class="card-text text-center">
+                  Preço por item: R$ <span id="price1">55</span>
+                </p>
             </div>
+            
           </div>
+
+          <!-- Produto 3 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -73,11 +99,25 @@
                 <p class="card-text">
                   O último sabre do Cavaleiro - O Verdadeiro Cavaleiro!
                 </p>
+
+                
+
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+                  class="quantity-control justify-content-center align-items-center mt-auto"
+                >
+                  <button class="btn" onclick="changeQuantity(2, -1)">-</button>
+                  <span id="quantity2">0</span>
+                  <button class="btn" onclick="changeQuantity(2, 1)">+</button>
+                </div>
+                <p class="card-text text-center">
+                  Preço por item: R$ <span id="price2">60</span>
+                </p>
             </div>
           </div>
 
+          <!-- Produto 4 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -90,11 +130,23 @@
                 <p class="card-text">
                   O clássico sabre da academia Jedi – The Redeemer Plus!
                 </p>
+                
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+                  class="quantity-control justify-content-center align-items-center mt-auto"
+                >
+                  <button class="btn" onclick="changeQuantity(3, -1)">-</button>
+                  <span id="quantity3">0</span>
+                  <button class="btn" onclick="changeQuantity(3, 1)">+</button>
+                </div>
+                <p class="card-text text-center">
+                  Preço por item: R$ <span id="price3">65</span>
+                </p>
             </div>
           </div>
 
+          <!-- Produto 5 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -108,11 +160,23 @@
                   O Discípulo é um sabre verdadeiramente especial; elegante e
                   elegante, mas sempre tão ligeiramente sinistro em seu design.
                 </p>
+                
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+                  class="quantity-control justify-content-center align-items-center mt-auto"
+                >
+                  <button class="btn" onclick="changeQuantity(4, -1)">-</button>
+                  <span id="quantity4">0</span>
+                  <button class="btn" onclick="changeQuantity(4, 1)">+</button>
+                </div>
+                <p class="card-text text-center">
+                  Preço por item: R$ <span id="price4">70</span>
+                </p>
             </div>
           </div>
 
+          <!-- Produto 6 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -128,11 +192,23 @@
                   maus da galáxia. A nova versão mkII faz algumas pequenas
                   mudanças estéticas do original!
                 </p>
+                
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+                  class="quantity-control justify-content-center align-items-center mt-auto"
+                >
+                  <button class="btn" onclick="changeQuantity(5, -1)">-</button>
+                  <span id="quantity5">0</span>
+                  <button class="btn" onclick="changeQuantity(5, 1)">+</button>
+                </div>
+                <p class="card-text text-center">
+                  Preço por item: R$ <span id="price5">75</span>
+                </p>
             </div>
           </div>
 
+          <!-- Produto 7 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -145,11 +221,23 @@
                 <p class="card-text">
                   Apresentando um verdadeiro mestre de espadas - O Conde.
                 </p>
+               
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+              class="quantity-control justify-content-center align-items-center mt-auto"
+            >
+              <button class="btn" onclick="changeQuantity(6, -1)">-</button>
+              <span id="quantity6">0</span>
+              <button class="btn" onclick="changeQuantity(6, 1)">+</button>
+            </div>
+            <p class="card-text text-center">
+              Preço por item: R$ <span id="price6">80</span>
+            </p>
             </div>
           </div>
 
+          <!-- Produto 8 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -165,11 +253,23 @@
                   mostrar. Mas este sabre pertence às mãos dos guerreiros mais
                   habilidosos e mais astutos.
                 </p>
+               
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+              class="quantity-control justify-content-center align-items-center mt-auto"
+            >
+              <button class="btn" onclick="changeQuantity(7, -1)">-</button>
+              <span id="quantity7">0</span>
+              <button class="btn" onclick="changeQuantity(7, 1)">+</button>
+            </div>
+            <p class="card-text text-center">
+              Preço por item: R$ <span id="price7">85</span>
+            </p>
             </div>
           </div>
 
+          <!-- Produto 9 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -185,11 +285,23 @@
                   a versão mais curta. Muitas vezes empunhados juntos, esses
                   punhos são absolutamente lindos.
                 </p>
+                
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+                  class="quantity-control justify-content-center align-items-center mt-auto"
+                >
+                  <button class="btn" onclick="changeQuantity(8, -1)">-</button>
+                  <span id="quantity8">0</span>
+                  <button class="btn" onclick="changeQuantity(8, 1)">+</button>
+                </div>
+                <p class="card-text text-center">
+                  Preço por item: R$ <span id="price8">90</span>
+                </p>
             </div>
           </div>
 
+          <!-- Produto 10 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -202,11 +314,23 @@
                 <p class="card-text">
                   O clássico sabre Jedi com guarda-mão – O Redentor!
                 </p>
+               
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+              class="quantity-control justify-content-center align-items-center mt-auto"
+            >
+              <button class="btn" onclick="changeQuantity(9, -1)">-</button>
+              <span id="quantity9">0</span>
+              <button class="btn" onclick="changeQuantity(9, 1)">+</button>
+            </div>
+            <p class="card-text text-center">
+              Preço por item: R$ <span id="price9">95</span>
+            </p>
             </div>
           </div>
 
+          <!-- Produto 11 -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <img
@@ -222,8 +346,21 @@
                   universo. Bem, nós ouvimos você – e ela está de volta para
                   sempre!
                 </p>
+                
                 <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
               </div>
+              <div
+                  class="quantity-control justify-content-center align-items-center mt-auto"
+                >
+                  <button class="btn" onclick="changeQuantity(10, -1)">
+                    -
+                  </button>
+                  <span id="quantity10">0</span>
+                  <button class="btn" onclick="changeQuantity(10, 1)">+</button>
+                </div>
+                <p class="card-text text-center">
+                  Preço por item: R$ <span id="price10">100</span>
+                </p>
             </div>
           </div>
         </div>
@@ -237,10 +374,10 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script src="scripts.js"></script>
     <script>
+      // Carregar a barra de navegação usando JavaScript (se necessário)
       $(document).ready(function () {
-        // Carregar a barra de navegação usando JavaScript
         $("#navbarContainer").load("navbar.html", function () {
           // Depois de carregar a barra de navegação, carregar o footer
           $("#footerContainer").load("footer.html", function () {
@@ -269,5 +406,17 @@
         });
       });
     </script>
+<script>
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+      var carrinho = document.getElementById("carrinho");
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        carrinho.classList.add("carrinho-fixed");
+      } else {
+        carrinho.classList.remove("carrinho-fixed");
+      }
+    }
+  </script>
   </body>
 </html>
