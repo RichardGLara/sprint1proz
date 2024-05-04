@@ -102,11 +102,18 @@ body {
 }
 
 .pics {
-    width: 100%;
-    margin: 4px;
+    max-width: 100%;
+    /* margin: 4px; */
 }
 
 .title{
     text-align: center;
     margin-top: 50px; /* Ajuste conforme necessário */
+}
+
+.container-main{
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    justify-content: space-between; /* Distribui os cards uniformemente ao longo do eixo principal */
+
 }
