@@ -133,9 +133,13 @@ body {
       border-style: none;
     }
 
-    .btn {
-      background-color: #0d6efd;
-      color: white;
-      font-weight: 800;
-      margin: 10px;
-    }
+.btn {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 800;
+  margin: 10px;
+}
+
+.qtd {
+  font-weight: 800;
+}
