@@ -127,3 +127,15 @@ body {
       top: 0;
       z-index: 999; /* z-index para a div ficar acima do conteúdo */
     }
+
+    .neon {
+      box-shadow: 5px 10px 20px rgb(0, 0, 0, 0.7);
+      border-style: none;
+    }
+
+    .btn {
+      background-color: #0d6efd;
+      color: white;
+      font-weight: 800;
+      margin: 10px;
+    }
