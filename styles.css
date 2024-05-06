@@ -10,7 +10,6 @@ body {
   font-weight: bold;
 }
 
-
 .main-footer {
   background-color: #343a40;
   color: #ffffff;
@@ -87,7 +86,9 @@ body {
 
 .tooltip-arrow {
   border-right-color: red;
- 
-
 }
 
+.neon {
+  box-shadow: 3px 5px 20px rgb(0, 150, 255, 0.7);
+  border-style: none;
+}
