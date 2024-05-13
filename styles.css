@@ -143,3 +143,10 @@ body {
 .qtd {
   font-weight: 800;
 }
+
+.pagar {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  margin-left: 50px;
+}
