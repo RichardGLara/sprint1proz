@@ -172,11 +172,11 @@
             $("#welcomeMessage").html(
               `Bem vindo <u>${user.username.toUpperCase()}</u>`
             );
-            // Adiciona a mensagem de boas-vindas com o nome sublinhado
+            // Adiciona a mensagem de boas-vindas
             $("#loginLink").remove(); // Remove o link de login
             $("#pagar").remove(); // Remove o botão de pagar
           } else {
-            errorMessage.text("Usuário ou senha incorretos."); // Mostra a mensagem de erro
+            errorMessage.text("Usuário ou senha incorretos."); // Mostrar a mensagem de erro
           }
         });
       });
