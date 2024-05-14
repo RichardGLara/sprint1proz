@@ -122,3 +122,5 @@ $("#contactForm").submit(function (event) {
   const tooltipList = [...tooltipTriggerList].map(
     (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
   );
+
+  // Login
