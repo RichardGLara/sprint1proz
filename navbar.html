@@ -28,8 +28,7 @@
         <a class="navbar-brand" href="index.html">
           <img src="imgs/logo.png" alt="Custom LightSabers" height="40" />
         </a>
-        
-       
+        <span id="welcomeMessage" class="navbar-text ms-3 text-white"></span>
         <button
           class="navbar-toggler"
           type="button"
@@ -59,8 +58,8 @@
               <a class="nav-link" href="contact.html">Contato</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login">Login</a>
-            </li>         
+              <a id="loginLink" class="nav-link" href="login">Login</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -87,7 +86,7 @@
           </div>
           <div class="modal-body">
             <!-- Conteúdo do formulário de login -->
-            <form>
+            <form id="loginForm">
               <div class="mb-3">
                 <label for="username" class="form-label">Usuário</label>
                 <input
@@ -105,6 +104,7 @@
                   id="password"
                   placeholder="Digite sua senha"
                 />
+                <div id="errorMessage" class="text-danger mt-2"></div>
               </div>
               <button type="submit" class="btn btn-primary btn-block">
                 Entrar
@@ -131,22 +131,55 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    
-  </body>
+    <script>
+      // Lista de usuários e senhas
+      const users = [
+        { username: "artur", password: "artur" },
+        { username: "richard", password: "richard" },
+        { username: "jefferson", password: "jefferson" },
+        { username: "klaydson", password: "klaydson" },
+        { username: "yasmin", password: "yasmin" },
+        // Adicione mais usuários conforme necessário
+      ];
 
-  <script>
-    // Função para abrir o modal de login
-    function openLoginModal() {
-      $("#loginModal").modal("show");
-    }
-    
+      // Função para abrir o modal de login
+      function openLoginModal() {
+        $("#loginModal").modal("show");
+      }
 
-    // Evento de clique no link de login
-    $(document).ready(function () {
-      $('a[href="login"]').click(function (e) {
-        e.preventDefault(); // Previne o comportamento padrão do link
-        openLoginModal(); // Abre o modal de login
+      // Evento de clique no link de login
+      $(document).ready(function () {
+        $('a[href="login"]').click(function (e) {
+          e.preventDefault(); // Previne o comportamento padrão do link
+          openLoginModal(); // Abre o modal de login
+        });
+
+        // Validação do formulário de login
+        $("#loginForm").submit(function (e) {
+          e.preventDefault(); // Previne o envio do formulário
+
+          var username = $("#username").val();
+          var password = $("#password").val();
+          var errorMessage = $("#errorMessage");
+
+          // Verificar se as credenciais são válidas
+          var user = users.find(
+            (user) => user.username === username && user.password === password
+          );
+
+          if (user) {
+            $("#loginModal").modal("hide"); // Fecha o modal de login
+            $("#welcomeMessage").html(
+              `Bem vindo <u>${user.username.toUpperCase()}</u>`
+            );
+            // Adiciona a mensagem de boas-vindas com o nome sublinhado
+            $("#loginLink").remove(); // Remove o link de login
+            $("#pagar").remove(); // Remove o botão de pagar
+          } else {
+            errorMessage.text("Usuário ou senha incorretos."); // Mostra a mensagem de erro
+          }
+        });
       });
-    });
-  </script>
+    </script>
+  </body>
 </html>
