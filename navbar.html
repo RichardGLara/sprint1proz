@@ -60,6 +60,9 @@
             <li class="nav-item">
               <a id="loginLink" class="nav-link" href="login">Login</a>
             </li>
+            <li class="nav-item" id="logoutContainer" style="display: none">
+              <button id="logoutButton" class="nav-link">Sair</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -118,6 +121,9 @@
       </div>
     </div>
 
+
+   
+
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
@@ -141,45 +147,87 @@
         { username: "yasmin", password: "yasmin" },
         // Adicione mais usuários conforme necessário
       ];
-
+    
       // Função para abrir o modal de login
       function openLoginModal() {
         $("#loginModal").modal("show");
       }
-
+    
+      // Função para capitalizar a primeira letra
+      function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+    
+      // Função para deslogar
+      function logout() {
+        $("#welcomeMessage").empty();
+        $("#logoutContainer").hide();
+        $("#loginLink").show();
+        $("#pagar").show();
+        $("#username").val("");
+        $("#password").val("");
+        $("#btnShowCart").hide();
+      }
+    
+      // Verificar se o usuário está logado
+      function checkLoggedInUser() {
+        var loggedInUser = localStorage.getItem("loggedInUser");
+        if (loggedInUser) {
+          var user = JSON.parse(loggedInUser);
+          var displayName = capitalizeFirstLetter(user.username);
+          $("#welcomeMessage").html(`Bem vindo <u>${displayName}</u>`); // Adiciona a mensagem de boas-vindas
+          $("#loginLink").hide(); // Remove o link de login
+          $("#pagar").hide(); // Remove o botão "Pagar"
+          $("#logoutContainer").show(); // Mostra o botão de logout
+          $("#btnShowCart").show();
+        }
+      }
+    
       // Evento de clique no link de login
       $(document).ready(function () {
+        checkLoggedInUser();
+    
         $('a[href="login"]').click(function (e) {
           e.preventDefault(); // Previne o comportamento padrão do link
           openLoginModal(); // Abre o modal de login
         });
-
+    
         // Validação do formulário de login
         $("#loginForm").submit(function (e) {
           e.preventDefault(); // Previne o envio do formulário
-
-          var username = $("#username").val();
-          var password = $("#password").val();
+    
+          var username = $("#username").val().toLowerCase();
+          var password = $("#password").val().toLowerCase();
           var errorMessage = $("#errorMessage");
-
+    
           // Verificar se as credenciais são válidas
           var user = users.find(
             (user) => user.username === username && user.password === password
           );
-
+    
           if (user) {
             $("#loginModal").modal("hide"); // Fecha o modal de login
-            $("#welcomeMessage").html(
-              `Bem vindo <u>${user.username.toUpperCase()}</u>`
-            );
-            // Adiciona a mensagem de boas-vindas
-            $("#loginLink").remove(); // Remove o link de login
-            $("#pagar").remove(); // Remove o botão de pagar
+            var displayName = capitalizeFirstLetter(user.username);
+            $("#welcomeMessage").html(`Bem vindo <u>${displayName}</u>`); // Adiciona a mensagem de boas-vindas
+            $("#loginLink").hide(); // Remove o link de login
+            $("#pagar").hide(); // Remove o botão "Pagar"
+            $("#logoutContainer").show(); // Mostra o botão de logout
+            $("#btnShowCart").show();
+    
+            // Armazena o usuário logado no localStorage
+            localStorage.setItem("loggedInUser", JSON.stringify(user));
           } else {
-            errorMessage.text("Usuário ou senha incorretos."); // Mostrar a mensagem de erro
+            errorMessage.text("Usuário ou senha incorretos."); // Mostra a mensagem de erro
           }
+        });
+    
+        // Evento de clique no botão de logout
+        $("#logoutButton").click(function () {
+          logout();
+          localStorage.removeItem("loggedInUser"); // Remove o usuário logado do localStorage
         });
       });
     </script>
+    
   </body>
 </html>
