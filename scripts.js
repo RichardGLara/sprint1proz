@@ -166,6 +166,7 @@ function showCart() {
 
           const quantityControl = document.createElement('div');
           quantityControl.className = 'ms-3';
+          quantityControl.className = 'btn-qnt-cart'
 
           const decrementButton = document.createElement('button');
           decrementButton.className = 'btn btn-secondary btn-sm';

@@ -161,3 +161,6 @@ body {
   flex-grow: 1;
 }
 
+.btn-qnt-cart {
+  display: flex;
+}
