@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <title>Produtos - Custom LightSabers</title>
     <style>
       /* Seus estilos existentes */
@@ -12,16 +15,25 @@
   </head>
   <body class="navbar-mini layout-fixed">
     <div id="navbarContainer" class="wrapper"></div>
-    <div class="carrinho" id="carrinho"><li class="nav-link total">
-        Carrinho: <span id="total" class="qtd">0</span></h3><a id="pagar" class="pagar" href="login">Pagar</a><a id="btnShowCart" class="pagar" onclick="openCartModal()" style="display: none">Ver Carrinho</a>
-
-        
-      </li></div>
+    <div class="carrinho" id="carrinho">
+      <li class="nav-link total">
+        Carrinho: <span id="total" class="qtd">0</span>
+        <a id="pagar" class="pagar" href="#" onclick="openLoginModal()"
+          >Pagar</a
+        >
+        <a
+          id="btnShowCart"
+          class="pagar"
+          onclick="openCartModal()"
+          style="display: none"
+          >Ver Carrinho</a
+        >
+      </li>
+    </div>
 
     <!-- Conteúdo da página -->
     <div class="content-wrapper">
       <div class="content p-4">
-        
         <h1 class="text-center mb-4">Produtos</h1>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
@@ -32,30 +44,39 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">The Slayer</h5>
+                <h5 style="font-weight: bold">The Slayer</h5>
                 <p class="card-text">
-                  A Caçadora. Uma variação do estilo Graflex. O estilo de sabre que
-                  todos conhecemos e amamos – este nos trás pistas de um tempo mais
-                  sombrio na história do Império. Usado para defender a
-                  República, bem como cometer atos terríveis de abate.
-                  Usada desde os padawans até os grandes mestres
+                  A Caçadora. Uma variação do estilo Graflex. O estilo de sabre
+                  que todos conhecemos e amamos – este nos trás pistas de um
+                  tempo mais sombrio na história do Império. Usado para defender
+                  a República, bem como cometer atos terríveis de abate. Usada
+                  desde os padawans até os grandes mestres
                 </p>
-                
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-                  class="quantity-control justify-content-center align-items-center mt-auto"
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(0, -1)"
                 >
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(0, -1)">-</button>
-                  <span id="quantity0" class="qtd">0</span>
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(0, 1)">+</button>
-                </div>
-                <p class="card-text text-center">
-                  Preço por item: R$ <span id="price0">50</span>
-                </p>
+                  -
+                </button>
+                <span id="quantity0" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(0, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price0">50</span>
+              </p>
             </div>
           </div>
-          
 
           <!-- Produto 2 -->
           <div class="col-lg-4 col-md-6 mb-4">
@@ -66,31 +87,39 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">The Republic SE</h5>
+                <h5 style="font-weight: bold">The Republic SE</h5>
                 <p class="card-text">
                   A República – o sétimo design original da Custom LightSabers!
                   Atualizado em 2023 para ser mais brilhante e ainda mais
                   elegante. "The Republic" evoca memórias de um tempo diferente,
                   um tempo mais antigo, quando os sabres eram mais elegantes e
-                  glamurosos.
-                  Praticamente um sabre para eventos formais.
-                  Tão mortal quanto elegante.
+                  glamurosos. Praticamente um sabre para eventos formais. Tão
+                  mortal quanto elegante.
                 </p>
-                
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-                  class="quantity-control justify-content-center align-items-center mt-auto"
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(1, -1)"
                 >
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(1, -1)">-</button>
-                  <span id="quantity1" class="qtd">0</span>
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(1, 1)">+</button>
-                </div>
-                <p class="card-text text-center">
-                  Preço por item: R$ <span id="price1">55</span>
-                </p>
+                  -
+                </button>
+                <span id="quantity1" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(1, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price1">55</span>
+              </p>
             </div>
-            
           </div>
 
           <!-- Produto 3 -->
@@ -102,29 +131,37 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">True Knight</h5>
+                <h5 style="font-weight: bold">True Knight</h5>
                 <p class="card-text">
                   O último sabre do Cavaleiro - O Verdadeiro Cavaleiro!
                   Extremament leve e equilibrada, empunhadura perfeita.
                   Certamente é o sabre para aquele que prezam a praticidade.
-                  Acabamento simple e alta letalidade!
-                  Conforto, ergonomia e furtividade em uma só arma.
+                  Acabamento simple e alta letalidade! Conforto, ergonomia e
+                  furtividade em uma só arma.
                 </p>
-
-                
 
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-                  class="quantity-control justify-content-center align-items-center mt-auto"
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(2, -1)"
                 >
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(2, -1)">-</button>
-                  <span id="quantity2" class="qtd">0</span>
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(2, 1)">+</button>
-                </div>
-                <p class="card-text text-center">
-                  Preço por item: R$ <span id="price2">60</span>
-                </p>
+                  -
+                </button>
+                <span id="quantity2" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(2, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price2">60</span>
+              </p>
             </div>
           </div>
 
@@ -137,26 +174,37 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">Redeemer Plus V2</h5>
+                <h5 style="font-weight: bold">Redeemer Plus V2</h5>
                 <p class="card-text">
-                  O clássico sabre da academia Jedi – The Redeemer Plus!
-                  Nova versão do tão aclamado Redeemer. Um sabre com um ar "vintage",
-                  mas tão moderno quant oqualquer outro de nossa fabricação.
-                  É uma homenagem aos grandes mestres da saga Jedi, com melhorias tecnologicas e uso de materiais mais resistentes.
+                  O clássico sabre da academia Jedi – The Redeemer Plus! Nova
+                  versão do tão aclamado Redeemer. Um sabre com um ar "vintage",
+                  mas tão moderno quant oqualquer outro de nossa fabricação. É
+                  uma homenagem aos grandes mestres da saga Jedi, com melhorias
+                  tecnologicas e uso de materiais mais resistentes.
                 </p>
-                
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-                  class="quantity-control justify-content-center align-items-center mt-auto"
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(3, -1)"
                 >
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(3, -1)">-</button>
-                  <span id="quantity3" class="qtd">0</span>
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(3, 1)">+</button>
-                </div>
-                <p class="card-text text-center">
-                  Preço por item: R$ <span id="price3">65</span>
-                </p>
+                  -
+                </button>
+                <span id="quantity3" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(3, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price3">65</span>
+              </p>
             </div>
           </div>
 
@@ -169,28 +217,37 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">Learner</h5>
+                <h5 style="font-weight: bold">Learner</h5>
                 <p class="card-text">
-                  O Discípulo é um sabre verdadeiramente especial. Elegante e
-                  de linhas limpas, mas ligeiramente sinistro em seu design.
-                  Remete aos antigos mestres samurais da Terra, em um lugar 
-                  chamado Japão, em uma era chamada Feudal.
-                  Sabre muito bem projetado e constrido.
-                  Quase uma arma milenar.
+                  O Discípulo é um sabre verdadeiramente especial. Elegante e de
+                  linhas limpas, mas ligeiramente sinistro em seu design. Remete
+                  aos antigos mestres samurais da Terra, em um lugar chamado
+                  Japão, em uma era chamada Feudal. Sabre muito bem projetado e
+                  constrido. Quase uma arma milenar.
                 </p>
-                
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-                  class="quantity-control justify-content-center align-items-center mt-auto"
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(4, -1)"
                 >
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(4, -1)">-</button>
-                  <span id="quantity4" class="qtd">0</span>
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(4, 1)">+</button>
-                </div>
-                <p class="card-text text-center">
-                  Preço por item: R$ <span id="price4">70</span>
-                </p>
+                  -
+                </button>
+                <span id="quantity4" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(4, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price4">70</span>
+              </p>
             </div>
           </div>
 
@@ -203,28 +260,38 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">Fear Mk II</h5>
+                <h5 style="font-weight: bold">Fear Mk II</h5>
                 <p class="card-text">
                   Um sabre clássico – O medo! Este certamente não precisa de
                   introdução, mas é sem dúvida um dos sabres mais sutilmente
                   maus da galáxia. A nova versão mkII faz algumas pequenas
-                  mudanças estéticas do original!
-                  Sabre que remete ao Impiedoso Darth Vader.
-                  Indispensável para colecionadoes e entusiastas da arte Jedi.
+                  mudanças estéticas do original! Sabre que remete ao Impiedoso
+                  Darth Vader. Indispensável para colecionadoes e entusiastas da
+                  arte Jedi.
                 </p>
-                
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-                  class="quantity-control justify-content-center align-items-center mt-auto"
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(5, -1)"
                 >
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(5, -1)">-</button>
-                  <span id="quantity5" class="qtd">0</span>
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(5, 1)">+</button>
-                </div>
-                <p class="card-text text-center">
-                  Preço por item: R$ <span id="price5">75</span>
-                </p>
+                  -
+                </button>
+                <span id="quantity5" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(5, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price5">75</span>
+              </p>
             </div>
           </div>
 
@@ -237,28 +304,38 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">The Count</h5>
+                <h5 style="font-weight: bold">The Count</h5>
                 <p class="card-text">
-                  Apresentando um verdadeiro mestre de espadas - O Conde.
-                  Sabre com empunhadura diferenciada, mas não menos letal 
-                  quanto qualquer outro modelo de nossa fabricação.
-                  Com um tamanho relativo a dois treços dos demais sabres, 
-                  é arma indicada para queles que buscam desafios e exercícios extremos.
-                  Ótimo sabre para empunhadora invertida.
+                  Apresentando um verdadeiro mestre de espadas - O Conde. Sabre
+                  com empunhadura diferenciada, mas não menos letal quanto
+                  qualquer outro modelo de nossa fabricação. Com um tamanho
+                  relativo a dois treços dos demais sabres, é arma indicada para
+                  queles que buscam desafios e exercícios extremos. Ótimo sabre
+                  para empunhadora invertida.
                 </p>
-               
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-              class="quantity-control justify-content-center align-items-center mt-auto"
-            >
-              <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(6, -1)">-</button>
-              <span id="quantity6" class="qtd">0</span>
-              <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(6, 1)">+</button>
-            </div>
-            <p class="card-text text-center">
-              Preço por item: R$ <span id="price6">80</span>
-            </p>
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(6, -1)"
+                >
+                  -
+                </button>
+                <span id="quantity6" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(6, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price6">80</span>
+              </p>
             </div>
           </div>
 
@@ -271,28 +348,38 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">The Champion</h5>
+                <h5 style="font-weight: bold">The Champion</h5>
                 <p class="card-text">
                   Este lindo belt brilha com um brilho quase régio, e pode-se
                   ser perdoado por pensar que seu propósito é apenas para
                   mostrar. Mas este sabre pertence às mãos dos guerreiros mais
-                  habilidosos e mais astutos.
-                  Outro sabre de elegancia ímpar, que quando manuseado pelas mão certas
-                  é capaz de criar ou destruir mundos.
+                  habilidosos e mais astutos. Outro sabre de elegancia ímpar,
+                  que quando manuseado pelas mão certas é capaz de criar ou
+                  destruir mundos.
                 </p>
-               
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-              class="quantity-control justify-content-center align-items-center mt-auto"
-            >
-              <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(7, -1)">-</button>
-              <span id="quantity7" class="qtd">0</span>
-              <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(7, 1)">+</button>
-            </div>
-            <p class="card-text text-center">
-              Preço por item: R$ <span id="price7">85</span>
-            </p>
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(7, -1)"
+                >
+                  -
+                </button>
+                <span id="quantity7" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(7, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price7">85</span>
+              </p>
             </div>
           </div>
 
@@ -305,29 +392,39 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">Snips</h5>
+                <h5 style="font-weight: bold">Snips</h5>
                 <p class="card-text">
                   O icônico sabre do aprendiz – Snips! Este sabre combina
                   perfeitamente com o Snips Tanto (vendido separadamente), que é
                   a versão mais curta. Muitas vezes empunhados juntos, esses
-                  punhos são absolutamente lindos.
-                  Leveza, simplicidade e a lembrança de que tudo tem um começo.
-                  Todo grande Jedi ja empunhou um sabre desse. E muitos ainda o tem, 
-                  como recordação dos tempos da Academia Jedi.
+                  punhos são absolutamente lindos. Leveza, simplicidade e a
+                  lembrança de que tudo tem um começo. Todo grande Jedi ja
+                  empunhou um sabre desse. E muitos ainda o tem, como recordação
+                  dos tempos da Academia Jedi.
                 </p>
-                
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-                  class="quantity-control justify-content-center align-items-center mt-auto"
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(8, -1)"
                 >
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(8, -1)">-</button>
-                  <span id="quantity8" class="qtd">0</span>
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(8, 1)">+</button>
-                </div>
-                <p class="card-text text-center">
-                  Preço por item: R$ <span id="price8">90</span>
-                </p>
+                  -
+                </button>
+                <span id="quantity8" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(8, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price8">90</span>
+              </p>
             </div>
           </div>
 
@@ -340,26 +437,37 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">Rescuer</h5>
+                <h5 style="font-weight: bold">Rescuer</h5>
                 <p class="card-text">
-                  O clássico sabre Jedi com guarda-mão – O Redentor!
-                  Outro sabre digno de ser lembrado eternamente.
-                  Esse é sem dúvida um dos modelos mais icônicos de toda a história Jedi.
-                  Obi-Wan-Kenob e o próprio Yoda, já tiveram um.
-                  Annakin também já empunhou essa arma em algumas poucas missões pela República, enquanto ainda era Padawan de Obi.
+                  O clássico sabre Jedi com guarda-mão – O Redentor! Outro sabre
+                  digno de ser lembrado eternamente. Esse é sem dúvida um dos
+                  modelos mais icônicos de toda a história Jedi. Obi-Wan-Kenob e
+                  o próprio Yoda, já tiveram um. Annakin também já empunhou essa
+                  arma em algumas poucas missões pela República, enquanto ainda
+                  era Padawan de Obi.
                 </p>
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-              class="quantity-control justify-content-center align-items-center mt-auto"
-            >
-              <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(9, -1)">-</button>
-              <span id="quantity9" class="qtd">0</span>
-              <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(9, 1)">+</button>
-            </div>
-            <p class="card-text text-center">
-              Preço por item: R$ <span id="price9">95</span>
-            </p>
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(9, -1)"
+                >
+                  -
+                </button>
+                <span id="quantity9" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(9, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price9">95</span>
+              </p>
             </div>
           </div>
 
@@ -372,95 +480,165 @@
                 alt="Sabre de luz"
               />
               <div class="card-body d-flex flex-column">
-                <h5 style="font-weight: bold;">The Furies</h5>
+                <h5 style="font-weight: bold">The Furies</h5>
                 <p class="card-text">
                   O Fury está de volta depois de um longo hiato, e é melhor do
                   que nunca! Este sabre-duplo é um dos mais reconhecidos no
                   universo. Bem, nós ouvimos você – e ela está de volta para
-                  sempre!
-                  Tão antiga quanto os sabres clássico, esse modelo ficou 
-                  muito conhecido nas mão de Darth Mau.
-                  E por isso ficou com a estigma de ser uma arma Sith, 
-                  mas na realidade, Difzu-Shimpa-doole, mestre de Yoda, 
-                  era o que mostrava melhor destreza com essa peça.
+                  sempre! Tão antiga quanto os sabres clássico, esse modelo
+                  ficou muito conhecido nas mão de Darth Mau. E por isso ficou
+                  com a estigma de ser uma arma Sith, mas na realidade,
+                  Difzu-Shimpa-doole, mestre de Yoda, era o que mostrava melhor
+                  destreza com essa peça.
                 </p>
-                
+
                 <!-- <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a> -->
               </div>
               <div
-                  class="quantity-control justify-content-center align-items-center mt-auto"
+                class="quantity-control justify-content-center align-items-center mt-auto"
+              >
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(10, -1)"
                 >
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(10, -1)">
-                    -
-                  </button>
-                  <span id="quantity10" class="qtd">0</span>
-                  <button class="quantity-btn btn btn-primary btn-sm" onclick="changeQuantity(10, 1)">+</button>
-                </div>
-                <p class="card-text text-center">
-                  Preço por item: R$ <span id="price10">100</span>
-                </p>
+                  -
+                </button>
+                <span id="quantity10" class="qtd">0</span>
+                <button
+                  class="quantity-btn btn btn-primary btn-sm"
+                  onclick="changeQuantity(10, 1)"
+                >
+                  +
+                </button>
+              </div>
+              <p class="card-text text-center">
+                Preço por item: R$ <span id="price10">100</span>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
-<!-- Modal do Carrinho -->
-<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
+    <!-- Modal do Carrinho -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body" id="cartContent">
-              <!-- Conteúdo do carrinho será inserido aqui via JavaScript -->
+            <!-- Conteúdo do carrinho será inserido aqui via JavaScript -->
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-danger" onclick="clearCart()">Limpar Carrinho</button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPagamento">Finalizar Compra</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-danger" onclick="clearCart()">
+              Limpar Carrinho
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalPagamento"
+            >
+              Finalizar Compra
+            </button>
           </div>
-      </div>
-  </div>
-</div>
-
- <!-- Modal de Pagamento -->
-<div class="modal fade" id="modalPagamento" tabindex="-1" aria-labelledby="modalPagamentoLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalPagamentoLabel">Formulário de Pagamento</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Formulário de pagamento -->
-        <form id="formPagamento">
-          <div class="mb-3">
-            <label for="nomeCartao" class="form-label">Nome no Cartão</label>
-            <input type="text" class="form-control" id="nomeCartao" required>
-          </div>
-          <div class="mb-3">
-            <label for="numeroCartao" class="form-label">Número do Cartão</label>
-            <input type="text" class="form-control" id="numeroCartao" required>
-          </div>
-          <div class="mb-3">
-            <label for="dataValidade" class="form-label">Data de Validade</label>
-            <input type="text" class="form-control" id="dataValidade" required>
-          </div>
-          <div class="mb-3">
-            <label for="cvv" class="form-label">CVV</label>
-            <input type="text" class="form-control" id="cvv" required>
-          </div>
-          <button type="submit" class="btn btn-primary" onclick="clearCart()">Pagar</button>
-        </form>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-
+    <!-- Modal de Pagamento -->
+    <div
+      class="modal fade"
+      id="modalPagamento"
+      tabindex="-1"
+      aria-labelledby="modalPagamentoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalPagamentoLabel">
+              Formulário de Pagamento
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Formulário de pagamento -->
+            <form id="formPagamento">
+              <div class="mb-3">
+                <label for="nomeCartao" class="form-label"
+                  >Nome no Cartão</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nomeCartao"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="numeroCartao" class="form-label"
+                  >Número do Cartão</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="numeroCartao"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="dataValidade" class="form-label"
+                  >Data de Validade</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="dataValidade"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvv" required />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                onclick="clearCart()"
+              >
+                Pagar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -470,48 +648,48 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts.js"></script>
-  <!-- Biblioteca card.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.4/card.min.js"></script>
-<!-- Biblioteca SweetAlert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-  $(document).ready(function() {
-    // Inicializar Card.js para formatar o número do cartão
-    var card = new Card({
-      form: '#formPagamento',
-      container: '#modalPagamento .modal-content', // Especificando o contêiner apenas para o modal de pagamento
-      formSelectors: {
-        numberInput: '#numeroCartao',
-        expiryInput: '#dataValidade',
-        cvcInput: '#cvv',
-        nameInput: '#nomeCartao'
-      },
-      width: 200, // largura opcional - padrão 350px
-      formatting: true, // formatação opcional - padrão true
-      placeholders: {
-        number: '•••• •••• •••• ••••',
-        name: 'Nome Completo',
-        expiry: '••/••',
-        cvc: '•••'
-      }
-    });
-   // Evento de submissão do formulário
-   $('#formPagamento').on('submit', function(event) {
-      event.preventDefault(); // Previne o comportamento padrão do formulário
+    <!-- Biblioteca card.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.4/card.min.js"></script>
+    <!-- Biblioteca SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      $(document).ready(function () {
+        // Inicializar Card.js para formatar o número do cartão
+        var card = new Card({
+          form: "#formPagamento",
+          container: "#modalPagamento .modal-content", // Especificando o contêiner apenas para o modal de pagamento
+          formSelectors: {
+            numberInput: "#numeroCartao",
+            expiryInput: "#dataValidade",
+            cvcInput: "#cvv",
+            nameInput: "#nomeCartao",
+          },
+          width: 200, // largura opcional - padrão 350px
+          formatting: true, // formatação opcional - padrão true
+          placeholders: {
+            number: "•••• •••• •••• ••••",
+            name: "Nome Completo",
+            expiry: "••/••",
+            cvc: "•••",
+          },
+        });
+        // Evento de submissão do formulário
+        $("#formPagamento").on("submit", function (event) {
+          event.preventDefault(); // Previne o comportamento padrão do formulário
 
-      // Exibir mensagem de sucesso com SweetAlert
-      Swal.fire({
-        icon: 'success',
-        title: 'Pagamento concluído!',
-        text: 'Seu pagamento foi realizado com sucesso.',
-        confirmButtonText: 'OK'
-      }).then(() => {
-        // Fechar o modal
-        $('#modalPagamento').modal('hide');
+          // Exibir mensagem de sucesso com SweetAlert
+          Swal.fire({
+            icon: "success",
+            title: "Pagamento concluído!",
+            text: "Seu pagamento foi realizado com sucesso.",
+            confirmButtonText: "OK",
+          }).then(() => {
+            // Fechar o modal
+            $("#modalPagamento").modal("hide");
+          });
+        });
       });
-    });
-  });
-</script>
+    </script>
     <script>
       // Carregar a barra de navegação usando JavaScript (se necessário)
       $(document).ready(function () {
@@ -543,17 +721,22 @@
         });
       });
     </script>
-<script>
-    window.onscroll = function() { scrollFunction() };
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
 
-    function scrollFunction() {
-      var carrinho = document.getElementById("carrinho");
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        carrinho.classList.add("carrinho-fixed");
-      } else {
-        carrinho.classList.remove("carrinho-fixed");
+      function scrollFunction() {
+        var carrinho = document.getElementById("carrinho");
+        if (
+          document.body.scrollTop > 50 ||
+          document.documentElement.scrollTop > 50
+        ) {
+          carrinho.classList.add("carrinho-fixed");
+        } else {
+          carrinho.classList.remove("carrinho-fixed");
+        }
       }
-    }
-  </script>
+    </script>
   </body>
 </html>

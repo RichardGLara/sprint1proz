@@ -1,233 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom LightSabers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.4/sweetalert2.min.css">
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body class="hold-transition">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body class="hold-transition">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="imgs/logo.png" alt="Custom LightSabers" height="40" />
-        </a>
-        <span id="welcomeMessage" class="navbar-text ms-3 text-white"></span>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="products.html">Produtos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Serviços</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contato</a>
-            </li>
-            <li class="nav-item">
-              <a id="loginLink" class="nav-link" href="login">Login</a>
-            </li>
-            <li class="nav-item" id="logoutContainer" style="display: none">
-              <button id="logoutButton" class="nav-link">Sair</button>
-            </li>
-          </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="imgs/logo.png" alt="Custom LightSabers" height="40" />
+            </a>
+            <span id="welcomeMessage" class="navbar-text ms-3 text-white"></span>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                      <a id="loginLink" class="nav-link" href="#" onclick="openLoginModal()">Login</a>
+                  </li>
+                  <li class="nav-item" id="logoutContainer" style="display: none">
+                      <button id="logoutButton" class="nav-link" onclick="logout()">Sair</button>
+                  </li>
+                  
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Modal de Login -->
     <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        aria-labelledby="loginModalLabel"
+        aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <!-- Conteúdo do formulário de login -->
-            <form id="loginForm">
-              <div class="mb-3">
-                <label for="username" class="form-label">Usuário</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  placeholder="Digite seu usuário"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Senha</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Digite sua senha"
-                />
-                <div id="errorMessage" class="text-danger mt-2"></div>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">
-                Entrar
-              </button>
-            </form>
-            <p class="mt-3 text-center">
-              Não tem uma conta? <a href="register.html">Registre-se</a>
-            </p>
-          </div>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Conteúdo do formulário de login -->
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="username"
+                                name="username"
+                                placeholder="Digite seu usuário"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="password"
+                                name="password"
+                                placeholder="Digite sua senha"
+                            />
+                            <div id="errorMessage" class="text-danger mt-2"></div>
+                        </div>
+                         <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary btn-block" onclick="submitLoginForm()">Entrar</button>
+                        </div>
+                    </form>
+                    <p class="mt-3 text-center">
+                        Não tem uma conta? <a href="register.html">Registre-se</a>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
-
-   
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.4/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script>
-      // Lista de usuários e senhas
-      const users = [
-        { username: "artur", password: "artur" },
-        { username: "richard", password: "richard" },
-        { username: "jefferson", password: "jefferson" },
-        { username: "klaydson", password: "klaydson" },
-        { username: "yasmin", password: "yasmin" },
-        // Adicione mais usuários conforme necessário
-      ];
-    
-      // Função para abrir o modal de login
-      function openLoginModal() {
-        $("#loginModal").modal("show");
-      }
-    
-      // Função para capitalizar a primeira letra
-      function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-      }
-    
-      // Função para deslogar
-      function logout() {
+    function openLoginModal() {
+    $("#loginModal").modal("show");
+    }
+    // Função para enviar o formulário de login
+    function submitLoginForm() {
+        $.ajax({
+            type: "POST",
+            url: "/php/login.php",
+            data: $("#loginForm").serialize(),
+            success: function(response) {
+                console.log("Resposta do servidor:", response);
+                response = JSON.parse(response);
+                if (response.success) {
+                    // Configurar o cookie de autenticação
+                    document.cookie = "token=" + response.token + ";path=/";
+                    showWelcomeMessage(response.fullName);
+                    $("#loginLink").hide();
+                    $("#logoutContainer").show();
+                    $("#loginModal").modal("hide");
+                    Swal.fire({
+                        icon: "success",
+                        title: response.message,
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                    checkAuthenticationStatus();
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: response.message
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("Erro na requisição:", error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Ocorreu um erro! Por favor, tente novamente."
+                });
+            }
+        });
+    }
+
+    // Função para exibir o nome do usuário logado
+    function showWelcomeMessage(fullName) {
+    $("#welcomeMessage").html("Bem vindo, " + fullName);
+    localStorage.setItem("userFullName", fullName);
+}
+
+    // Função para verificar o status de autenticação
+    function checkAuthenticationStatus() {
+    var token = getCookie("token");
+    if (token !== "") {
+        var fullName = localStorage.getItem("userFullName");
+        if (fullName) {
+            $("#welcomeMessage").html("Bem vindo, " + fullName);
+        }
+        $("#loginLink").hide();
+        $("#logoutContainer").show();
+        $("#pagar").hide();
+        $("#btnShowCart").show();        
+    } else {
+        $("#loginLink").show();
+        $("#logoutContainer").hide();
+        $("#pagar").show();
+        $("#btnShowCart").hide();
+    }
+}
+
+    // Função para deslogar o usuário
+    function logout() {
+        document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
         $("#welcomeMessage").empty();
         $("#logoutContainer").hide();
         $("#loginLink").show();
-        $("#pagar").show();
-        $("#username").val("");
-        $("#password").val("");
-        $("#btnShowCart").hide();
-      }
-    
-      // Verificar se o usuário está logado
-      function checkLoggedInUser() {
-        var loggedInUser = localStorage.getItem("loggedInUser");
-        if (loggedInUser) {
-          var user = JSON.parse(loggedInUser);
-          var displayName = capitalizeFirstLetter(user.username);
-          $("#welcomeMessage").html(`Bem vindo <u>${displayName}</u>`); // Adiciona a mensagem de boas-vindas
-          $("#loginLink").hide(); // Remove o link de login
-          $("#pagar").hide(); // Remove o botão "Pagar"
-          $("#logoutContainer").show(); // Mostra o botão de logout
-          $("#btnShowCart").show();
+        checkAuthenticationStatus();
+    }
+
+    // Função para recuperar o valor de um cookie
+    function getCookie(name) {
+        var cookieArr = document.cookie.split(";");
+        for (var i = 0; i < cookieArr.length; i++) {
+            var cookiePair = cookieArr[i].split("=");
+            if (name == cookiePair[0].trim()) {
+                return decodeURIComponent(cookiePair[1]);
+            }
         }
-      }
-    
-      // Evento de clique no link de login
-      $(document).ready(function () {
-        checkLoggedInUser();
-    
-        $('a[href="login"]').click(function (e) {
-          e.preventDefault(); // Previne o comportamento padrão do link
-          openLoginModal(); // Abre o modal de login
-        });
-    
-        // Validação do formulário de login
-        $("#loginForm").submit(function (e) {
-          e.preventDefault(); // Previne o envio do formulário
-    
-          var username = $("#username").val().toLowerCase();
-          var password = $("#password").val().toLowerCase();
-          var errorMessage = $("#errorMessage");
-    
-          // Verificar se as credenciais são válidas
-          var user = users.find(
-            (user) => user.username === username && user.password === password
-          );
-    
-          if (user) {
-            $("#loginModal").modal("hide"); // Fecha o modal de login
-            var displayName = capitalizeFirstLetter(user.username);
-            $("#welcomeMessage").html(`Bem vindo <u>${displayName}</u>`); // Adiciona a mensagem de boas-vindas
-            $("#loginLink").hide(); // Remove o link de login
-            $("#pagar").hide(); // Remove o botão "Pagar"
-            $("#logoutContainer").show(); // Mostra o botão de logout
-            $("#btnShowCart").show();
-    
-            // Armazena o usuário logado no localStorage
-            localStorage.setItem("loggedInUser", JSON.stringify(user));
-          } else {
-            errorMessage.text("Usuário ou senha incorretos."); // Mostra a mensagem de erro
-          }
-        });
-    
-        // Evento de clique no botão de logout
-        $("#logoutButton").click(function () {
-          logout();
-          localStorage.removeItem("loggedInUser"); // Remove o usuário logado do localStorage
-        });
-      });
-    </script>
-    
-  </body>
+        return "";
+    }
+
+    // Verificar o status de autenticação ao carregar a página
+    $(document).ready(function() {
+        checkAuthenticationStatus();
+    });
+</script>
+</body>
 </html>
