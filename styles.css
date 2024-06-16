@@ -110,35 +110,29 @@ body {
 }
 
 .quantity-btn {
-  margin: 0 5px; /* Espaçamento entre os botões */
+  margin: 10px; /* Espaçamento entre os botões */
 }
 
-  .carrinho {
-      width: 100%;
-      background-color: #212529f6; /* cor de fundo */
-      padding: 10px 0; /* espaçamento interno */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra */
-      transition: top 0.3s ease; /* transição suave */
-      text-align: center;
-    }
-
-    .carrinho-fixed {
-      position: fixed;
-      top: 0;
-      z-index: 999; /* z-index para a div ficar acima do conteúdo */
-    }
-
-    .neon {
-      box-shadow: 5px 10px 20px rgb(0, 0, 0, 0.7);
-      border-style: none;
-    }
-
-.btn {
-  background-color: #0d6efd;
-  color: white;
-  font-weight: 800;
-  margin: 10px;
+.carrinho {
+  width: 100%;
+  background-color: #212529f6; /* cor de fundo */
+  padding: 10px 0; /* espaçamento interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* sombra */
+  transition: top 0.3s ease; /* transição suave */
+  text-align: center;
 }
+
+.carrinho-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 999; /* z-index para a div ficar acima do conteúdo */
+}
+
+.neon {
+  box-shadow: 5px 10px 20px rgb(0, 0, 0, 0.7);
+  border-style: none;
+}
+
 
 .qtd {
   font-weight: 800;
@@ -147,6 +141,26 @@ body {
 .pagar {
   color: white;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 16px;
   margin-left: 50px;
+  background-color: #0d6efd; /* Green */
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cart-item img {
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.cart-item div {
+  flex-grow: 1;
+}
+
+.btn-qnt-cart {
+  display: flex;
 }

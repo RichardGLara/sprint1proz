@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários - Custom LightSabers</title>
+    <style>
+        .saber-box {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .saber-box img {
+            display: block;
+            margin: 0 auto;
+        }
+        .saber-name {
+            text-align: center;
+        }
+        .saber-list {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td, tr {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        /* Responsividade */
+        @media screen and (max-width: 760px) {
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+
+            /* Esconda os cabeçalhos em telas menores */
+            thead {
+                display: none;
+            }
+
+            /* Ajuste a aparência das linhas */
+            tr {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            /* Estilos para as células */
+            td {
+                border-bottom: none;
+                display: block;
+                text-align: right; /* Alinhe o texto à direita em telas menores */
+            }
+
+            /* Adicione o rótulo antes dos dados */
+            td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+<body class="navbar-mini layout-fixed">
+    <div id="navbarContainer" class="wrapper"></div>
+
+    <!-- Conteúdo da página -->
+    <div class="content-wrapper">
+        <div class="content p-4">
+            <h1 class="text-center mb-4">Lista de Usuários</h1>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Completo</th>
+                        <th>Email</th>
+                        <th>Nome de Usuário</th>
+                        <th>Gênero</th>
+                        <th>Estado</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider" id="userTableBody">
+                    <!-- Conteúdo será inserido aqui via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div id="footerContainer" class="wrapper"></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "/php/get_users.php",
+                success: function(response) {
+                    console.log("Resposta do servidor:", response);
+
+                    let tableBody = $('#userTableBody');
+                    if (response.length === 0) {
+                        let row = tableBody.append('<tr><td colspan="7">Nenhum usuário encontrado.</td></tr>');
+                    } else {
+                        response.forEach(function(user) {
+                            // Substituindo os valores de gênero
+                            let gender = user.gender === 'male' ? 'Masculino' : 'Feminino';
+
+                            let row = '<tr>' +
+                                '<td data-label="ID">' + user.id + '</td>' +
+                                '<td data-label="Nome Completo">' + user.fullname + '</td>' +
+                                '<td data-label="Email">' + user.email + '</td>' +
+                                '<td data-label="Nome de Usuário">' + user.username + '</td>' +
+                                '<td data-label="Gênero">' + gender + '</td>' +
+                                '<td data-label="Estado">' + user.state_name + '</td>' +
+                                '<td data-label="Cidade">' + user.city_name + '</td>' +
+                                '</tr>';
+                            tableBody.append(row);
+
+                            let sabersHTML = '';
+                            if (user.sabers) {
+                                let sabers = user.sabers.split(',');
+                                let saberImages = user.saber_image_paths.split(',');
+                                for (let i = 0; i < sabers.length; i++) {
+                                    sabersHTML += '<div class="saber-box">' +
+                                                  '<img src="' + saberImages[i].trim() + '" width="50" height="50">' +
+                                                  '<div class="saber-name">' + sabers[i] + '</div>' +
+                                                  '</div>';
+                                }
+                            } else {
+                                sabersHTML = '<div class="saber-box">' +
+                                             'O usuário ainda não possui nenhum sabre' +
+                                             '</div>';
+                            }
+                            // Adicionando uma linha para os sabres
+                            let saberRow = '<tr><td colspan="7" class="saber-list">' + sabersHTML + '</td></tr>';
+                            tableBody.append(saberRow);
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log("Erro ao obter dados:", error);
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            // Carregar a barra de navegação usando JavaScript
+            $("#navbarContainer").load("navbar.html", function () {
+                // Depois de carregar a barra de navegação, carregar o footer
+                $("#footerContainer").load("footer.html", function () {
+                    // Mostrar o footer quando todo o conteúdo estiver carregado
+                    $(".footer").css("display", "block");
+
+                    // Verificar se o conteúdo da página é maior que a janela do navegador
+                    var windowHeight = $(window).height();
+                    var documentHeight = $(document).height();
+                    if (documentHeight > windowHeight) {
+                        // Se o conteúdo for maior que a janela, ajustar o footer para que ele fique abaixo do conteúdo
+                        $(".footer").css({
+                            position: "relative",
+                            bottom: "auto",
+                            left: "auto",                        
+                            
+                        });
+                    } else {
+                        // Se o conteúdo não for maior que a janela, ajustar o footer para que ele fique no final da página
+                        $(".footer").css({
+                            position: "fixed",
+                            bottom: "0",
+                            left: "0",
+                        });
+                    }
+               
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -24,9 +24,24 @@
           qualquer dúvida.
         </div>
         <img class="view_index" src="imgs/vitrini.png" alt="" />
-        <p><a href="products.html" class="btn btn-primary">Ver Produtos</a></p>
+   
+        <div class="container">
+          <h1 class="mt-5">Estatísticas de Usuários</h1>
+          <h3 class="mt-4">Usuários por Sabre</h3>
+          <div class="row" id="usuarios-por-sabre"></div>
+          <h3 class="mt-4">Usuários por Cidade</h3>
+          <ul id="usuarios-por-cidade" class="list-group"></ul>
+          <h3 class="mt-4">Usuários por Estado</h3>
+          <ul id="usuarios-por-estado" class="list-group"></ul>
       </div>
+      </div><br>
+       <div class="text-center">
+        <a href="/users.html">Ver Usuários</a>
     </div>
+    </div>
+    <br>
+
+    
 
     <!-- Footer -->
     <footer class="footer">
@@ -35,6 +50,61 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+         $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "/php/getUserStatistics.php",
+                success: function(response) {
+                    console.log("Resposta do servidor:", response);
+
+       // Verificar e exibir usuários por sabre
+if (response.usuarios_por_sabre.length > 0) {
+    response.usuarios_por_sabre.forEach(function(sabre) {
+        var sabreHTML = '<div class="col-lg-2 col-md-4 col-6 mb-4">' + // Alterado para 2 colunas em dispositivos médios e maiores, e 6 colunas em dispositivos menores
+                            '<div class="card h-100">' +
+                                '<img src="' + sabre.image_path + '" class="card-img-top" alt="' + sabre.sabre + '">' +
+                                '<div class="card-body">' +
+                                    '<h5 class="card-title">' + sabre.sabre + '</h5>' +
+                                    '<p class="card-text">' + sabre.total_usuarios + ' usuário(s)</p>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+        $('#usuarios-por-sabre').append(sabreHTML);
+    });
+} else {
+    $('#usuarios-por-sabre').append('<div class="col">Nenhum usuário encontrado para este sabre.</div>');
+}
+
+
+
+
+                    // Verificar e exibir usuários por cidade
+                    if (response.usuarios_por_cidade.length > 0) {
+                        response.usuarios_por_cidade.forEach(function(cidade) {
+                            $('#usuarios-por-cidade').append('<li class="list-group-item">' + cidade.cidade + ': ' + cidade.total_usuarios + ' usuário(s)</li>');
+                        });
+                    } else {
+                        $('#usuarios-por-cidade').append('<li class="list-group-item">Nenhum usuário encontrado nas cidades.</li>');
+                    }
+
+                    // Verificar e exibir usuários por estado
+                    if (response.usuarios_por_estado.length > 0) {
+                        response.usuarios_por_estado.forEach(function(estado) {
+                            $('#usuarios-por-estado').append('<li class="list-group-item">' + estado.estado + ': ' + estado.total_usuarios + ' usuário(s)</li>');
+                        });
+                    } else {
+                        $('#usuarios-por-estado').append('<li class="list-group-item">Nenhum usuário encontrado nos estados.</li>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log("Erro ao obter dados:", error);
+                }
+            });
+        });
+    </script>
 
     <script>
       $(document).ready(function () {
